@@ -178,12 +178,18 @@ if (isset($_SESSION['id'])) {
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
-	$participe=$_GET['participe'];
-	$suppr=$_GET['suppr'];
-	$idSauveteur=$_GET['idSauveteur'];
-	$idPoste=$_GET['idPoste'];
-	$heureDebut=$_GET['hdeb'];
-	$heureFin=$_GET['hfin'];
+  $participe = isset($_GET['participe']) ? $_GET['participe'] : NULL;
+	//$participe=$_GET['participe'];
+  $suppr = isset($_GET['suppr']) ? $_GET['suppr'] : NULL;
+	//$suppr=$_GET['suppr'];
+  $idSauveteur = isset($_GET['idSauveteur']) ? $_GET['idSauveteur'] : NULL;
+	//$idSauveteur=$_GET['id_Sauveteur'];
+  $idPoste = isset($_GET['idPoste']) ? $_GET['idPoste'] : NULL;
+	//$idPoste=$_GET['id_Poste'];
+  $heureDebut = isset($_GET['hdeb']) ? $_GET['hdeb'] : NULL;
+	//$heureDebut=$_GET['hdeb'];
+  $heureFin = isset($_GET['hfin']) ? $_GET['hfin'] : NULL;
+	//$heureFin=$_GET['hfin'];
 
 	if($participe==2){
 		participation($link,$participe,$idPoste,$idSauveteur,$rowAdmin[0],$heureDebut,$heureFin);
@@ -272,7 +278,8 @@ de formation de Montbéliard. </div>
 
   $dateactu = "20" . date("y-m-d");
 
-  $prochains=$_POST['prochains'];
+  $prochains = isset($_POST['prochains']) ? $_POST['prochains'] : NULL;
+  //$prochains=$_POST['prochains'];
 
   if(!$prochains || $prochains=="none") {
 	  $result=mysqli_query($link,"SELECT * FROM poste WHERE datedeb >= '$dateactu' ORDER BY datedeb ASC") or die("Select sur poste failed");
