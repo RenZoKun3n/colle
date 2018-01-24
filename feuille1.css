@@ -1,0 +1,293 @@
+H1 { color: navy; 
+ text-align: center;
+}
+
+.important{
+	color: red;
+	font-weight: bolder;
+	font-size: 14pt;
+}
+
+body { 
+ font-size: 12pt;
+}
+
+a:link {color:blue; text-decoration:underline;}
+a:visited {color: navy; text-decoration:underline;}
+a:hover {color:green; text-decoration:none;}
+
+dd{
+ font-size: 9pt;
+}
+
+#divParticipe{
+ display : none;
+ position: absolute;
+ border: 1px solid #000000;
+ background: #ccccff;
+ margin-left: 7px;
+ width: 420px;
+ height: 150px;
+ z-index:15; 
+ font-size: 10pt;
+ text-align: center;
+ -moz-border-radius: 1em;
+}
+
+#divParticipe2{
+ display : none;
+ position: absolute;
+ border: 1px solid #000000;
+ background: #ccccff;
+ margin-left: 7px;
+ width: 420px;
+ height: 150px;
+ z-index:15; 
+ font-size: 10pt;
+ text-align: center;
+ -moz-border-radius: 1em;
+}
+
+.submitParticipe{
+     font-size: 10pt;
+     border: 1px solid #FFFFFF;	
+     color: white;
+     background-color: #694bff;
+     height:20px;
+     text-align: center;
+     -moz-border-radius: 1em;
+}
+
+
+
+.tableStageN { margin-left:auto; 
+	margin-right:auto;
+	text-align: center;
+	font-size: 13px;
+	border: solid #000 1px;}
+
+.toprow {
+    font-style: bold;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 15px;
+    background-color: #694bff; }
+
+.data1 {
+    color: #000000;
+    text-align: left;
+    background-color: #cbb6e3;}
+
+.data2 {
+    color: #000000;
+    text-align: left;
+    background-color: #7ed3ec;}
+
+
+#container {
+ float: left;
+ margin-top: 10px;
+ width: 78%;
+}
+
+#informationsSite{
+	margin: 8px;
+	font-size: 10pt;
+}
+
+.premierChar{
+font-size: 22pt;
+font-weight:bold;
+}
+
+div.containerPhoto {
+ float: left;
+ margin-top: 7px;
+ width: 78%;
+ background-color: #EEEEFF;
+ border: 1px solid #844e96;
+ font-size: 9pt;
+ -moz-border-radius:1em;
+}
+
+a.containerPhoto:link {color:#EEEEFF;}
+a.containerPhoto:visited {color:#EEEEFF;}
+a.containerPhoto:hover {color:#EEEEFF;} 
+
+b.titremenu {
+ font-size: 10pt;
+ margin-left: 3%;
+ color: black; 
+}
+
+b.titrePhoto {
+ font-size: 10pt;
+ margin-left: 3%;
+ color: red; 
+}
+
+
+.menu {
+ background: #ccccff;
+ float: right;
+ //margin-right: 2px;
+ font-size: 9pt;
+ width: 20%;
+ border: 1px solid black;
+ margin-top: 7px;
+ padding-left: 5px;
+ -moz-border-radius:1em;
+}
+
+
+
+
+#intro{
+ font: 10pt/14pt georgia; 
+ color: #555753; 
+ background: white;
+ margin-top: 4px;
+ margin-left: 8px;
+}
+
+#header{
+ border-bottom: 1px solid #333333;
+ border-left: 1px solid #333333;
+ border-right: 1px solid #333333;
+ background: #ccccff;
+ top: 0;
+ left: auto;
+ right: auto;
+ 
+ font-size: 36px;
+ color: white; 
+ text-align: center;
+ width: 649px;
+ height: 54px; 
+ background-image:url(fond1.jpg);
+ background-repeat:no-repeat;
+
+}
+
+#footer{
+  border-top: 1px solid #333333;
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+  background: #ccccff;
+  color: #333333;
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  font-size: 12px;
+  -moz-border-radius:1em;
+}
+
+#foot_r{
+ float: right;
+ margin-right: 25px;
+}
+
+#foot_l{
+ float: left;
+ margin-left: 25px;
+}
+
+
+.listePostes {
+ margin-left: 8px;
+}
+
+.entetePoste {
+ border: 1px solid #008080;
+ background-color: #EEEEFF;
+}
+
+.poste {
+ border: 1px solid #008080;
+ background-color: #EEEEFF;
+ //background-repeat:no-repeat;
+ //background-position:0% 65%;
+ margin-bottom: 15px;
+ -moz-border-radius:1em;
+}
+
+.libellePoste{
+ width: 55%;
+ font-size: 15pt;
+ padding-left: 2px;
+ background-color: #844e96;
+ color: white;
+ -moz-border-radius:1em;
+}
+
+.datePoste{
+ background-color: #EEEEFF;
+ font-size: 12pt;
+ float: left;
+ margin-left: 6px;
+}
+
+.lieuPoste{
+ //margin: 5px;
+ background-color: #EEEEFF;
+ font-size: 12pt;
+ float: right;
+ margin-right: 8px;
+}
+
+.spacer { clear: both; }
+
+.requiPoste{
+ position: relative;
+ left: 2px;
+ 
+ background-color: #EEEEFF;
+ margin-left: 5px;
+ margin-bottom: 2px;
+ color: navy;
+ font-size: 12pt;
+ float: left;
+ bottom: auto;
+  
+}
+
+
+div.participe{
+ float: right;
+ margin-right: 7px;
+ margin-bottom: 2px;
+ font-size: 8pt;
+}
+
+.commentairePhoto{
+ background-color: #EEEEFF;
+ font-size: 9pt;
+ margin-left: 6px;
+ margin-bottom: 3px;
+ margin-right: 6px;
+}
+
+table.participe{  
+	font-size: 8pt; 
+}
+
+.commentairePoste{
+ background-color: #EEEEFF;
+ padding-top: 3px;
+ padding-bottom: 3px;
+ font-size: 10pt;
+ margin-left: 5px;
+}
+
+.smenu2{
+	display: none;
+}
+
+
+.titremenu2 {
+ font-weight: bolder;
+ font-size: large;
+ margin-left: 3%;
+}
+
