@@ -53,7 +53,7 @@ if (isset($_SESSION['id'])) {
 ?>
 <div class="containerPhoto">
 <?php
-
+$numPage = 0;
 if (!$numPage || $numPage == "none"){
 	// Pas de numéro de debut de photo
 	$numPage=1;

@@ -15,28 +15,31 @@ if (!$mail || $mail=="none") {
 <head>
 <title> Connexion sur le site </title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/master.css">
 
 </head>
 <body>
-  Vous êtes déjà venu.
+  <div class="container-fluid cf1">
+  Vous êtes déjà venu:
+</div>
   <div class="container">
-  <div class="col-sm-2">
+  <div class="col-sm-12">
 
-  E-mail :
-  </div>
-  <div class="col-sm-10">
+  E-mail :           
+
 
   <input type="text" name="mail" size=43 maxlength=50>
   </div>
+
   </div>
+  <br>
   <div class="container">
 
-  <div class="col-sm-2">
+  <div class="col-sm-12">
     Mot de passe :
-  </div>
-  <div class="col-sm-10">
+
     <input type="password" name="password" value="" size="43"/>
-  <br><INPUT TYPE="submit" VALUE="Valider"></FORM>
+  <br> <br> <INPUT TYPE="submit" VALUE="Valider"></FORM>
   </div>
   </div>
 

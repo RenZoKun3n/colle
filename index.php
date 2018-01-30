@@ -24,21 +24,19 @@ Vous êtes déja venu :
 <FORM ENCTYPE="multipart/form-data" ACTION="index2.php" METHOD="POST">
 </div>
 <div class="container">
-<div class="col-sm-2">
 
-E-mail :
-</div>
-<div class="col-sm-10">
+
+
+<div class="col-sm-12">
+  E-mail :           
 
 <input type="text" name="mail" size=43 maxlength=50>
 </div>
 </div>
 <div class="container">
-
-<div class="col-sm-2">
+<br>
+<div class="col-sm-12">
   Mot de passe :
-</div>
-<div class="col-sm-10">
   <input type="password" name="password" value="" size="43"/>
 <br><br><INPUT TYPE="submit" VALUE="Valider"></FORM>
 </div>
