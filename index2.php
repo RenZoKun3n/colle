@@ -4,6 +4,10 @@
   session_start();
   include('fonctions.php');
 
+  if(isset($_SESSION['id'])){
+    header("Location: ./visuPoste.php");
+  }
+
   if(!isset($_POST['mail']))$_POST['mail']="none";
   if(!isset($_POST['password']))$_POST['password']="";
   $mail=$_POST['mail'];

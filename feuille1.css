@@ -291,3 +291,13 @@ table.participe{
  margin-left: 3%;
 }
 
+.nomDeconnexion{
+  border:solid black 2px;
+  border-radius:5px;
+  top:0px;
+  background-color:black;
+  color:white;
+  position:fixed;
+
+}
+

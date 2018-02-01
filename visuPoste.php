@@ -167,14 +167,12 @@ if (d) {d.style.display='block';}
 
 <?php
 
+include("ongletNomDeconnexion.php");
+
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
-	$nomSession=$_SESSION['nom'];
-	$prenomSession=$_SESSION['prenom'];
 	//echo "test : $idSession";
-
-	echo "<div>$nomSession $prenomSession</div>";
 
 	$link=connectDB();
 
