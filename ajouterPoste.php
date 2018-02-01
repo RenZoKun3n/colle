@@ -11,17 +11,17 @@ include('fonctions.php');
 <link rel="stylesheet" href="css/master.css">
 
 <?php
- $libelle=isset($_POST['libelle']);
- $modif=isset($_POST['modif']);
- $datefinfr=isset($_POST['datefinfr']);
- $datedebfr=isset($_POST['datedebfr']);
- $heuredeb=isset($_POST['heuredeb']);
- $heurefin=isset($_POST['heurefin']);
+ $libelle=isset($_POST['libelle']) ? $_POST['libelle'] : NULL;
+ $modif=isset($_POST['modif']) ? $_POST['modif'] : NULL;
+ $datefinfr=isset($_POST['datefinfr']) ? $_POST['datefinfr'] : NULL;
+ $datedebfr=isset($_POST['datedebfr']) ? $_POST['datedebfr'] : NULL;
+ $heuredeb=isset($_POST['heuredeb']) ? $_POST['heuredeb'] : NULL;
+ $heurefin=isset($_POST['heurefin']) ? $_POST['heurefin'] : NULL;
 
- $lieu=isset($_POST['lieu']);
- $participantsMini=isset($_POST['participantsMini']);
- $commentaire=isset($_POST['commentaire']);
- $idPoste=isset($_POST['idPoste']);
+ $lieu=isset($_POST['lieu']) ? $_POST['lieu'] : NULL;
+ $participantsMiniisset=isset($_POST['participantsMini']) ? $_POST['participantsMini'] : NULL;
+ $commentaire=isset($_POST['commentaire']) ? $_POST['commentaire'] : NULL;
+ $idPoste=isset($_POST['idPoste']) ? $_POST['idPoste'] : NULL;
 
 
  if(($libelle && $libelle != "none") || $modif==2) {
