@@ -3,14 +3,15 @@ session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
 include('menu.php');
 include('fonctions.php');
+include("ongletNomDeconnexion.php");
 
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 	//echo "test : $idSession";
-	
+
 	$link=connectDB();
-	
+
 	// On test si l'utilisateur est un administrateur
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
@@ -20,7 +21,7 @@ if (isset($_SESSION['id'])) {
 	  $action=$_POST[action];
 
 	  if($action==1){
-		// Modification 
+		// Modification
 
 		  $queryPoste=mysqli_query($link,"SELECT libelle,datedeb,datefin,heuredeb,heurefin,lieu,participantsMini,commentaire FROM poste WHERE id=$idPoste") or die("La requete poste a echouée");
 		  if($rowPoste=mysqli_fetch_row($queryPoste)){
@@ -59,14 +60,14 @@ if (isset($_SESSION['id'])) {
 		echo "<INPUT TYPE=\"hidden\" name=\"idPoste\" value=$idPoste>\n";
 		echo "<INPUT TYPE=\"submit\" VALUE=Supprimer le poste></FORM>\n";
 		echo "<b>Cliquer <a href=./visuPoste.php?prochains=1>Ici</a> pour annuler et retourner à la liste des postes.<b><br/></html>\n";
-		
+
 
 	     } else {
 		echo "Erreur: Poste non trouvé";
 	     }
 
            }
-  
+
 	} else {
 
 	  echo "<html><body>Vous n'avez pas le droit d'accéder à cette page !!!</body></html>";
@@ -78,5 +79,3 @@ if (isset($_SESSION['id'])) {
   echo "<html><body><div id=\"intro\">Vous ne pouvez pas visualiser cette page actuellement. Veuillez vous <a href=\"./index.php\">identifier</a>.</div></body></html>";
 
 }
-
-

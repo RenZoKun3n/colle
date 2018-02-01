@@ -3,11 +3,12 @@ session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
 include('menu.php');
 include('fonctions.php');
+include("ongletNomDeconnexion.php");
 
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
-	
+
 	$link=connectDB();
 
 	if(empty($_GET['idSauveteur']))
@@ -17,7 +18,7 @@ if (isset($_SESSION['id'])) {
 	} else {
 		$idSauveteur=$_GET['idSauveteur'];
 	}
-	
+
 	// On test si l'utilisateur est un administrateur
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 
@@ -38,11 +39,13 @@ if (isset($_SESSION['id'])) {
 
 
 <title>Modification du mot de passe d'un sauveteur</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
 <script type="text/javascript">
 <!--
 function envoyer(){
-	if ( (document.modification.nouveauMdp.value=="") || (document.modification.nouveauMdp2.value=="") ){ 
+	if ( (document.modification.nouveauMdp.value=="") || (document.modification.nouveauMdp2.value=="") ){
 		alert("Veuillez remplir tous les champs,  merci");
 	} else {
 		if(document.modification.nouveauMdp.value != document.modification.nouveauMdp2.value) {
@@ -50,7 +53,7 @@ function envoyer(){
 		} else {
 			document.modification.submit();
 		}
-	}	
+	}
 }
 
 
@@ -71,7 +74,7 @@ window.onload=montre;
 Modification du mot de passe
 </div>
 </center>
-<div id="container"> 
+<div id="container">
 <?php
 	echo "<br><b>Veuillez renseigner le nouveau mot de passe de $nomSauveteur $prenomSauveteur</b>";
 	echo "<form name=\"modification\" ACTION=\"modifieMdp.php\" METHOD=\"POST\">\n";
@@ -102,13 +105,13 @@ Modification du mot de passe
 
 		$link=connectDB();
 ?>
-		
+
 		<center>
 		<div id="header">
 		     Modification du mot de passe
 		</div>
 		</center>
-		<div id="container"> 
+		<div id="container">
 		     <b>Modification du mot de passe effectuée.</b><br/>
 <?php
 		$result3=mysqli_query($link,"UPDATE sauveteur SET password = \"$nouveauMdp\" where id = $idSauveteur") or die("La modification du mot de passe du sauveteur a echouée");
@@ -122,7 +125,7 @@ Modification du mot de passe
 	<body>
 		<center><div id="header">Opération non autorisée</div></center>
 	</body>
-<?php	
+<?php
 }
 
 menu($link,$rowAdmin[0],$idSession);
@@ -144,11 +147,3 @@ footer();
 <?php
 }
 ?>
-
-
-
-
-
-
-
-

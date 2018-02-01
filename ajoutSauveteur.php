@@ -3,6 +3,7 @@ session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
 include('menu.php');
 include('fonctions.php');
+include("ongletNomDeconnexion.php");
 
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
@@ -32,8 +33,8 @@ if (isset($_SESSION['id'])) {
 
 <title>Ajout d'un sauveteur</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/master.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
 <script type="text/javascript">
 <!--
 function envoyer(){

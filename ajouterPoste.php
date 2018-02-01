@@ -8,9 +8,11 @@ include('fonctions.php');
 
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
 <link rel="stylesheet" href="css/master.css">
 
 <?php
+include("ongletNomDeconnexion.php");
  $libelle=isset($_POST['libelle']) ? $_POST['libelle'] : NULL;
  $modif=isset($_POST['modif']) ? $_POST['modif'] : NULL;
  $datefinfr=isset($_POST['datefinfr']) ? $_POST['datefinfr'] : NULL;

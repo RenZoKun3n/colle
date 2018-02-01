@@ -2,6 +2,7 @@
 session_start();
 include('menu.php');
 include('fonctions.php');
+include("ongletNomDeconnexion.php");
 
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
@@ -23,8 +24,8 @@ if (isset($_SESSION['id'])) {
 
 <title>Liste des sauveteurs</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/master.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
 <script type="text/javascript">
 <!--
 function montre(id) {

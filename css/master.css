@@ -13,6 +13,27 @@ div{
 
 }
 
+.nomDeconnexion{
+  padding: 0.5%;
+  background-color: lightgray;
+  position: fixed;
+  right:2%;
+  top:2%;
+  color: black;
+
+}
+
+a:visited{
+color: black;
+}
+a:hover{
+  color: Green;
+}
+
+.nomDeconnexion:a{
+  color: Green;
+}
+
 
 .index{
   text-align: center;
