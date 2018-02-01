@@ -170,9 +170,9 @@ if (d) {d.style.display='block';}
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
-	//echo "test : $idSession";
 	$nomSession=$_SESSION['nom'];
 	$prenomSession=$_SESSION['prenom'];
+	//echo "test : $idSession";
 
 	echo "<div>$nomSession $prenomSession</div>";
 
