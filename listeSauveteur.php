@@ -44,15 +44,15 @@ Liste des Sauveteurs
 </center>
 </body>
 <?php
-        $acs=$_GET['acs'];
+        $acs=isset($_GET['acs']);
 
-	if(!$asc || $asc=="none" || $asc==0){
+	if(!isset($asc) || $asc=="none" || $asc==0){
 		$sens="ASC";
 	} else{
 		$sens="DESC";
 	}
 
-	$order=$_GET['order'];
+	$order=isset($_GET['order']);
 
 	if(!$order || $order=="none" || $order==0){
 
@@ -68,7 +68,7 @@ Liste des Sauveteurs
 		$querySauveteur=mysqli_query($link,"SELECT * FROM sauveteur ORDER BY `nbVisites` $sens") or die("Select sauveteur failed");
 	}
 
-	if($asc==0){
+	if(@$asc==0){
 		$invasc=1;
 	} else {
 		$invasc=0;

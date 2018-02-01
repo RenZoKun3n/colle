@@ -171,6 +171,10 @@ if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 	//echo "test : $idSession";
+	$nomSession=$_SESSION['nom'];
+	$prenomSession=$_SESSION['prenom'];
+
+	echo "<div>$nomSession $prenomSession</div>";
 
 	$link=connectDB();
 

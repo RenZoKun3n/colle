@@ -11,17 +11,17 @@ include('fonctions.php');
 <link rel="stylesheet" href="css/master.css">
 
 <?php
- $libelle=$_POST['libelle'];
- $modif=$_POST['modif'];
- $datefinfr=$_POST['datefinfr'];
- $datedebfr=$_POST['datedebfr'];
- $heuredeb=$_POST['heuredeb'];
- $heurefin=$_POST['heurefin'];
+ $libelle=isset($_POST['libelle']);
+ $modif=isset($_POST['modif']);
+ $datefinfr=isset($_POST['datefinfr']);
+ $datedebfr=isset($_POST['datedebfr']);
+ $heuredeb=isset($_POST['heuredeb']);
+ $heurefin=isset($_POST['heurefin']);
 
- $lieu=$_POST['lieu'];
- $participantsMini=$_POST['participantsMini'];
- $commentaire=$_POST['commentaire'];
- $idPoste=$_POST['idPoste'];
+ $lieu=isset($_POST['lieu']);
+ $participantsMini=isset($_POST['participantsMini']);
+ $commentaire=isset($_POST['commentaire']);
+ $idPoste=isset($_POST['idPoste']);
 
 
  if(($libelle && $libelle != "none") || $modif==2) {

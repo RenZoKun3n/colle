@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
 
 	$link=connectDB();
 
-	$nom=$_POST['nom'];
+	$nom=isset($_POST['nom']);
 
 	// On test si l'utilisateur est un administrateur
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
