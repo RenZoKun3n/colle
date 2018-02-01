@@ -14,16 +14,16 @@ function menu($link,$admin,$idSession) {
 			document.getElementById(menu).innerHTML="<span class=\"titremenu2\">-</span> <b>"+id+"</b>";
 		}
 	}
-	
-	
-	
+
+
+
 	function montre(id) {
 		var d = document.getElementById(id);
 		for (var i = 1; i<=10; i++) {
 			if (document.getElementById('200'+i)) {document.getElementById('200'+i).style.display='none';}
 		}
 		if (d) {d.style.display='block';}
-	}	
+	}
 	//-->
 	</script>
 
@@ -43,7 +43,7 @@ function menu($link,$admin,$idSession) {
 	<br>
 	<b class="titremenu">Messagerie</b><br>
     	<dd id="smenu3"><center>
-	
+
 	<?php
 	$messageQuery=mysqli_query($link,"SELECT COUNT(*) FROM `messages` WHERE id_desti=$idSession AND suppr='N' AND lu=0");
 	if($myrowMessage=mysqli_fetch_row($messageQuery)){
@@ -54,7 +54,7 @@ function menu($link,$admin,$idSession) {
         echo "<a href=\"./visuSauveteur.php\">Liste des Sauveteurs</a><br>";
 	echo "<a href=\"./voirMsg.php\">Message(s) [New : $nbMessage]</a><br>";
 	?>
-	
+
 	<a href="./writeMsg.php">Ecrire un message</a><br>
 	<a href="./preferences.php">Mes préférences</a></br></center>
 	</dd>
@@ -62,9 +62,9 @@ function menu($link,$admin,$idSession) {
 <?php
 	// On test si l'utilisateur est admin ou non
 	if ($admin==2 || $admin==1) {
-	
+
 ?>
-	
+
 <br>
 	<b class="titremenu">Administration</b><br>
 		<dd id="smenu4">
@@ -72,10 +72,10 @@ function menu($link,$admin,$idSession) {
 			<a href="./ajouterPoste.php">Ajouter un poste</a><br>
 			<a href="./ajoutSauveteur.php">Ajouter un sauveteur</a><br>
 			<a href="./listeSauveteur.php">Liste des Sauveteurs</a><br>
-	
+
 <?php
 	}
-	
+
 	echo"</center></dd>";
 ?>
 	<br>

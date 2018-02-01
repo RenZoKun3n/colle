@@ -34,7 +34,7 @@ if (isset($_SESSION['id'])) {
 
 	echo "<div id=\"intro\">Voici les message que vous avez reçus.</div>";
 
-	$suppr=isset($_GET['suppr']) ? $_GET['suppr'] : NULL;
+	$suppr=isset($_GET['suppr']);
 
 
 	if($suppr==1){
@@ -48,7 +48,7 @@ if (isset($_SESSION['id'])) {
 
 	<?php
 
-	$idMessage=isset($_GET['idMessage']) ? $_GET['idMessage'] : NULL;
+	$idMessage=isset($_GET['idMessage']);
 
 	if(!$idMessage || $idMessage=="none"){
 

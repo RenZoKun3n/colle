@@ -46,11 +46,10 @@ if (isset($_SESSION['id'])) {
 
 	echo "<div id=\"container\">";
 
-
-	$desti=isset($_POST['desti']) ? $_POST['desti'] : NULL;
-	$dateactu=isset($_POST['dateactu']) ? $_POST['dateactu']: NULL;
-	$titre=isset($_POST['titre']) ? $_POST['titre']: NULL;
-	$texte=isset($_POST['texte']) ? $_POST['texte']: NULL;
+	$desti=isset($_POST['desti']);
+	$dateactu=isset($_POST['dateactu']);
+	$titre=isset($_POST['titre']);
+	$texte=isset($_POST['texte']);
 
 
 	if($desti && $desti!="none"){

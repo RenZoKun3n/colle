@@ -47,7 +47,7 @@ if (isset($_SESSION['id'])) {
 
 <div id="container">
 <?php
-if(!$mail || $mail=="none"){
+if(!isset($mail) || $mail=="none"){
 
 	$querySauveteur=mysqli_query($link,"SELECT nom,prenom,mail,envoieCopy FROM sauveteur WHERE id=$idSession");
 	$sauveteur=mysqli_fetch_row($querySauveteur);

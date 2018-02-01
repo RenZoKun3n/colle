@@ -2,6 +2,16 @@ body{
   background-color: lightblue;
   text-align: center;
 }
+div{
+
+    margin: 1%;
+    border:inherit 5px #000000;
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+    border-radius: 22px;
+
+
+}
 
 
 .index{
