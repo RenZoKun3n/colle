@@ -74,7 +74,7 @@ if (isset($_SESSION['id'])) {
 <?php
 if($rowAdmin[0]==1)
 {
-	$nouveauSauveteur=$_POST['nouveauSauveteur'];
+	$nouveauSauveteur=isset($_POST['nouveauSauveteur']);
 	if($nouveauSauveteur==1)
 	{
 		$nbSuppr=0;
