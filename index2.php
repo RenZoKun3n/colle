@@ -41,7 +41,7 @@
 
     $mail=strtolower($mail);
 
-    $result2=mysqli_query($link,"SELECT id,nbVisites,datederVisite,admin, nom, prenom FROM sauveteur WHERE LOWER(sauveteur.mail)=\"$mail\" AND sauveteur.password=\"$password\"") or die(mysql_error());
+    $result2=mysqli_query($link,"SELECT id,nbVisites,datederVisite,admin, nom, prenom, lienAvatar FROM sauveteur WHERE LOWER(sauveteur.mail)=\"$mail\" AND sauveteur.password=\"$password\"") or die(mysql_error());
 
     if($myrow2=mysqli_fetch_row($result2)) {
 
@@ -69,6 +69,8 @@
       $_SESSION['id']=$myrow2[0];
       $_SESSION['nom']=$myrow2[4];
       $_SESSION['prenom']=$myrow2[5];
+      $_SESSION['lienAvatar']=$myrow2[6];
+
       if($nbNouveauSauveteur>0){
         header("Location: ./news.php");
       } else {
