@@ -378,6 +378,10 @@ de formation de Montbéliard. </div>
 		if ($rowAdmin[0]==1 || $rowAdmin[0]==2) {
 			echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
 		}
+    //Possibilité de supprimer sa participation pour simple utilisateur envoie d'une demande au gestionnaire.
+  //  if ($rowAdmin[0]==0) {
+    //  echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
+    //}
 
 		if($participe[2]==$idSession){
 			$participeDeja=true;

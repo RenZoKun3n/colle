@@ -100,7 +100,7 @@ function supprimeParticipation($link,$idPoste,$idSauveteur){
 
 
 function participation($link, $participe,$idPoste,$idSauveteur,$admin,$heureDeb,$heureFin){
-	session_start();
+	@session_start();
    	//$idSession=$_SESSION['id'];
 
 	// Le sauveteur participe à un poste

@@ -21,7 +21,7 @@ include("ongletNomDeconnexion.php");
  $heurefin=isset($_POST['heurefin']) ? $_POST['heurefin'] : NULL;
 
  $lieu=isset($_POST['lieu']) ? $_POST['lieu'] : NULL;
- $participantsMiniisset=isset($_POST['participantsMini']) ? $_POST['participantsMini'] : NULL;
+ $participantsMini=isset($_POST['participantsMini']) ? $_POST['participantsMini'] : NULL;
  $commentaire=isset($_POST['commentaire']) ? $_POST['commentaire'] : NULL;
  $idPoste=isset($_POST['idPoste']) ? $_POST['idPoste'] : NULL;
 
