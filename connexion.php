@@ -4,18 +4,21 @@ session_start();
 include('menu.php');
 include('fonctions.php');
 
-$mail=$_POST['mail'];
-$nom=$_POST['nom'];
+$mail=isset($_POST['mail']);
+$nom=isset($_POST['nom']);
 
 if(!$mail || $mail == "none") {
 ?>
 <html>
 <head>
 <title> Inscription sur le site </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
 </head>
 <body>
-Bienvenue, 
-<br> 
+Bienvenue,
+<br>
 Entrez votre e-mail SVP :
  <FORM ENCTYPE="multipart/form-data" ACTION="connexion.php" METHOD="POST">
  <br> E-mail : <input type="text" name="mail" size=50 maxlength=50>
@@ -46,7 +49,7 @@ Entrez votre e-mail SVP :
 						}
 					}
 				}
-			
+
 		}
 -->
 </script>
@@ -54,19 +57,19 @@ Entrez votre e-mail SVP :
 <body>
 <?php
   $link=connectDB();
-  
+
   $mail=strtolower($mail);
-  
+
   // On vérifit si le mail fait bien partie de la table sauveteurtmp
   $result=mysqli_query($link,"SELECT * FROM sauveteurtmp WHERE mail=\"$mail\"");
-  
+
   $result2=mysqli_query($link,"SELECT * FROM sauveteur WHERE mail=\"$mail\"");
-  
+
   if($myrow2=mysqli_fetch_row($result2)) {
   	echo "Vous êtes déja venu sur le site (votre inscription est validée), utilisez la page <a href=\"./index.php\">suivante</a>";
   } else {
-  
-  	if($myrow=mysqli_fetch_row($result)) {  
+
+  	if($myrow=mysqli_fetch_row($result)) {
 	   	// le mail est déjà présent dans la table sauveteurtmp
 		echo "Votre inscription a déjà été prise en compte. Il faut être patient maintenant !!<br><br>\n";
 	 	//echo "<a href=\"mailto:gael_dot_colle_at_laposte_dot_net?subject=Inscription site SNSM&body=Remplacer les _dot_ par . et _at_ par @ dans mon adresse mail.\">Envoyer un mail pour s'inscrire</a>";
@@ -118,7 +121,6 @@ Votre demande d'inscription a bien été prise en compte et sera validée très 
 </body>
 </html>
 <?php
- }    
+ }
 }
 ?>
-
