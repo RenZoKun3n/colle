@@ -218,9 +218,7 @@ if (isset($_SESSION['id'])) {
 
 
 <center>
-<div id="header">
-Prochains postes de secours SNSM
-</div>
+<div id="header"><p>Prochains postes de secours SNSM</p></div>
 </center>
 
 

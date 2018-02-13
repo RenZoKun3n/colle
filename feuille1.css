@@ -153,14 +153,10 @@ b.titrePhoto {
 }
 
 #header{
- border-bottom: 1px solid #333333;
- border-left: 1px solid #333333;
- border-right: 1px solid #333333;
+ border: 1px solid #333333;
  background: #ccccff;
- top: 0;
  left: auto;
  right: auto;
-
  font-size: 36px;
  color: white;
  text-align: center;
@@ -168,7 +164,10 @@ b.titrePhoto {
  height: 54px;
  background-image:url(fond1.jpg);
  background-repeat:no-repeat;
+}
 
+#header p{
+  margin-top:-18px;
 }
 
 #footer{
