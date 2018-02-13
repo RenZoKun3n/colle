@@ -18,7 +18,7 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 </HEAD>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
-<link rel="stylesheet" href="css/master.css">
+<link rel="stylesheet" href="css/master.css" type="text/css" />
 <SCRIPT type=text/javascript>
 
 function actionModifPoste(idP){
