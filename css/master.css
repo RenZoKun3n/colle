@@ -19,9 +19,10 @@ div{
   background-color: lightgray;
   position: fixed;
   right:2%;
-  top:2%;
+  top:0%;
   color: black;
-
+  border:solid black 2px;
+  border-radius:5px;
 }
 
 a:visited{
@@ -31,8 +32,13 @@ a:hover{
   color: Green;
 }
 
-.nomDeconnexion:a{
+.nomDeconnexion a{
   color: Green;
+  text-decoration: none;
+}
+
+.nomDeconnexion a:hover{
+  text-decoration: underline;
 }
 
 

@@ -130,11 +130,12 @@ b.titrePhoto {
 
 .menu {
  background: #ccccff;
- float: right;
- //margin-right: 2px;
+ position:fixed;
+ right:1%;
+ top:25%;
  font-size: 9pt;
  width: 20%;
- border: 1px solid black;
+ border: 2px solid black;
  margin-top: 7px;
  padding-left: 5px;
  -moz-border-radius:1em;
@@ -152,14 +153,10 @@ b.titrePhoto {
 }
 
 #header{
- border-bottom: 1px solid #333333;
- border-left: 1px solid #333333;
- border-right: 1px solid #333333;
+ border: 1px solid #333333;
  background: #ccccff;
- top: 0;
  left: auto;
  right: auto;
-
  font-size: 36px;
  color: white;
  text-align: center;
@@ -167,7 +164,10 @@ b.titrePhoto {
  height: 54px;
  background-image:url(fond1.jpg);
  background-repeat:no-repeat;
+}
 
+#header p{
+  margin-top:-18px;
 }
 
 #footer{
@@ -292,12 +292,3 @@ table.participe{
  margin-left: 3%;
 }
 
-.nomDeconnexion{
-  border:solid black 2px;
-  border-radius:5px;
-  top:0px;
-  background-color:black;
-  color:white;
-  position:fixed;
-
-}

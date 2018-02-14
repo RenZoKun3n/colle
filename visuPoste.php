@@ -19,7 +19,7 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 </HEAD>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
-<link rel="stylesheet" href="css/master.css">
+<link rel="stylesheet" href="css/master.css" type="text/css" />
 <SCRIPT type=text/javascript>
 
 function actionModifPoste(idP){
@@ -219,9 +219,7 @@ if (isset($_SESSION['id'])) {
 
 
 <center>
-<div id="header">
-Prochains postes de secours SNSM
-</div>
+<div id="header"><p>Prochains postes de secours SNSM</p></div>
 </center>
 
 
