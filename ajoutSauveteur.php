@@ -68,6 +68,7 @@ Ajout d'un sauveteur
 </div>
 </center>
 <div id="container">
+	
 <?php
 	echo "<br><b>Veuillez renseigner les différents champs puis <br>cliquez sur Enregistrer pour ajouter un nouveau sauveteur</b>";
 	echo "<form name=\"ajout\" ACTION=\"ajoutSauveteur.php\" METHOD=\"POST\">\n";

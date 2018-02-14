@@ -31,6 +31,7 @@
     <?php include("formulaireConnexion.php"); ?>
 
     <br><br><br><br><br>
+    <a href="./oublie.php">Mot de passe oublié ?</a> <br>
     Nouveau venu, cliquez <a href="./connexion.php">ici</a>.
   </body>
 </html>
