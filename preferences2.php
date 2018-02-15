@@ -51,7 +51,7 @@ if (isset($_SESSION['id'])) {
 <?php
 
 
- if ($Fichier && $Fichier != "none") {
+ if (@$Fichier && $Fichier != "none") {
   copy($Fichier, $Fichier_name);
 
   $adresseFichier="http://crakdown.org/SNSM/avatars/$Fichier_name";

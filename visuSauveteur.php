@@ -69,7 +69,7 @@ while ($myrow3=mysqli_fetch_row($result3)) {
 	if($compteur>= (($numPage-1)*$ecartImage)+1 && $compteur<=$numPage*$ecartImage) {
 		if($compteur%3==1)
 			echo "<tr>";
-		echo "<td><center> <a href=\"./repondre.php?desti=$myrow3[0]\"><img src=\"$myrow3[4]\"></a><br><b>$myrow3[1]</b> $myrow3[2]<br>$myrow3[3] Visites";
+		echo "<td><center> <a href=\"./repondre.php?desti=$myrow3[0]\"><img src=\"$myrow3[4]\" width='50px' height='50px'></a><br><b>$myrow3[1]</b> $myrow3[2]<br>$myrow3[3] Visites";
 
 		echo "</center></td>\n";
 
