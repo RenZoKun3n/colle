@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="col-sm-12">
 			E-mail :           
-			<input type="text" name="mail" size=43 maxlength=50>
+			<input type="text" name="mail" size=43 maxlength=50 >
 		</div>
 	</div>
 	<div class="container">
