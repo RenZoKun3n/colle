@@ -4,6 +4,7 @@ session_start();
 include('menu.php');
 include('fonctions.php');
 include("ongletNomDeconnexion.php");
+$idactuel=$_SESSION['id'];
 
 $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
 ?>
@@ -377,9 +378,9 @@ de formation de Montbéliard. </div>
 			echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
 		}
     //Possibilité de supprimer sa participation pour simple utilisateur envoie d'une demande au gestionnaire.
-  //  if ($rowAdmin[0]==0) {
-    //  echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
-    //}
+    if ($rowAdmin[0]==0) {
+    //  echo "<a href=\"./visuPoste.php?suppr=&idPoste=$idactuel&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
+    }
 
 		if($participe[2]==$idSession){
 			$participeDeja=true;

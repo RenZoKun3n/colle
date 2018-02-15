@@ -23,7 +23,7 @@ if ($mail="" || $mail=="none") {
 			Vous êtes déja venu :
 			<br>
 		</div>
-		
+
 		<?php include("formulaireConnexion.php"); ?>
 
 		<h2></u>Si vous rencontrez des problèmes pour vous inscrire aux postes, <br/>
@@ -31,6 +31,8 @@ if ($mail="" || $mail=="none") {
 		<a href="http://www.mozilla-europe.org/fr/firefox/"><img src="surfez-mieux.png"></a>
 
 		<br><br><br><br><br>
+		<a href="./oublie.php">Mot de passe oublié ?</a>
+		<br>
 		Nouveau venu, cliquez <a href="./connexion.php">ici</a>.
 	</body>
 </html>

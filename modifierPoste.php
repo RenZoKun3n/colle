@@ -27,8 +27,8 @@ if (isset($_SESSION['id'])) {
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
 	if($rowAdmin[0]==1 || $rowAdmin[0]==2){
-	  $idPoste=$_POST[idPoste];
-	  $action=$_POST[action];
+	  @$idPoste=$_POST[idPoste];
+	 @ $action=$_POST[action];
 
 	  if($action==1){
 		// Modification
@@ -58,6 +58,11 @@ if (isset($_SESSION['id'])) {
 	  	} else {
 			echo "Erreur: Poste non trouvé";
 	 	}
+		?>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="feuille1.css" type="text/css" />
+	  <link rel="stylesheet" href="css/master.css">
+		<?php
 
 	   } else {
 	     // Suppression

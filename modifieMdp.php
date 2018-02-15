@@ -37,7 +37,7 @@ if (isset($_SESSION['id'])) {
 	// On test si l'utilisateur est admin ou non
 	if (($rowAdmin[0]==2 || $rowAdmin[0]==1) && $idSauveteur && $idSauveteur!= "none") {
 
-		if (!$nouveauMdp || $nouveauMdp == "none") {
+		if (@!$nouveauMdp || $nouveauMdp == "none") {
 			$nomSauveteur=$_GET['nomSauveteur'];
 			$prenomSauveteur=$_GET['prenomSauveteur'];
 ?>

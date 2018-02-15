@@ -104,7 +104,7 @@ font-weight:bold;
 div.containerPhoto {
  float: left;
  margin-top: 7px;
- width: 78%;
+ width: 75%;
  background-color: #EEEEFF;
  border: 1px solid #844e96;
  font-size: 9pt;
@@ -291,4 +291,3 @@ table.participe{
  font-size: large;
  margin-left: 3%;
 }
-
