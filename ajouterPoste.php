@@ -8,12 +8,28 @@ include("ongletNomDeconnexion.php");
 ?>
 
 <html>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="feuille1.css" type="text/css" />
-<link rel="stylesheet" href="css/master.css">
+<head>
+  <title>Ajout d'un poste</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="feuille1.css" type="text/css" />
+  <link rel="stylesheet" href="css/master.css">
+</head>
 
 <?php
 if(isset($_SESSION['id'])){
+
+
+  //l'utilisateur est authentifié
+  $idSession=$_SESSION['id'];
+
+  $link=connectDB();
+
+  // On test si l'utilisateur est un administrateur
+  $queryAdmin=mysqli_query($link,"SELECT admin,dateAvantderVisite FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
+  $rowAdmin=mysqli_fetch_row($queryAdmin);
+
+  mysqli_query($link,"UPDATE sauveteur SET dateAvantderVisite=DATE_ADD(now(), INTERVAL +2 HOUR) WHERE id=$idSession") or die("Update Sauveteur News failed");
+
 
  $libelle=isset($_POST['libelle']) ? $_POST['libelle'] : NULL;
  $modif=isset($_POST['modif']) ? $_POST['modif'] : NULL;
@@ -26,7 +42,6 @@ if(isset($_SESSION['id'])){
  $participantsMini=isset($_POST['participantsMini']) ? $_POST['participantsMini'] : NULL;
  $commentaire=isset($_POST['commentaire']) ? $_POST['commentaire'] : NULL;
  $idPoste=isset($_POST['idPoste']) ? $_POST['idPoste'] : NULL;
-
 
  if(($libelle && $libelle != "none") || $modif==2) {
 
@@ -69,6 +84,10 @@ if(isset($_SESSION['id'])){
 
 
 ?>
+  <center>
+  <div id="header">Ajout d'un poste</div>
+  </center>
+
   <FORM ENCTYPE="multipart/form-data" ACTION="ajouterPoste.php" METHOD="POST">
 
   <br/> Nom du poste : <input type="text" name="libelle" size=60 maxlength=60>
@@ -84,6 +103,7 @@ if(isset($_SESSION['id'])){
 <?php
 
 }
+menu($link,$rowAdmin[0],$idSession);
 ?>
 
 </html>

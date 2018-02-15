@@ -43,7 +43,6 @@ function deselectionneOk(num)
 </script>
 
 <title>Informations de dernière minute</title>
-<link rel="stylesheet" href="feuille1.css" type="text/css" />
  <META HTTP-EQUIV="refresh" CONTENT="50; URL=visuPoste.php?prochains=1">
 </head>
 

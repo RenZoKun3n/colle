@@ -4,8 +4,13 @@ session_start();
 include('menu.php');
 include('fonctions.php');
 
-$mail=isset($_POST['mail']);
-$nom=isset($_POST['nom']);
+if(isset($_POST['mail'])){
+  $mail=$_POST['mail'];
+} else $mail="none";
+
+if(isset($_POST['nom'])){
+  $nom=$_POST['nom'];
+} else $nom="none";
 
 if(!$mail || $mail == "none") {
 ?>
@@ -31,6 +36,9 @@ Entrez votre e-mail SVP :
 <html>
 <head>
 <title> Inscription sur le site </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
 <script language="javascript">
  <!--
  function envoyer(){
