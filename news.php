@@ -13,7 +13,7 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="feuille1.css" type="text/css" />
-	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/master.css"/>
 <script type="text/javascript">
 function montre(id) {
 var d = document.getElementById(id);
@@ -48,9 +48,6 @@ function deselectionneOk(num)
 </head>
 
 <body>
-<center>
-<div id="header">Dernière Minute</div>
-</center>
 
 <?php
 
@@ -67,6 +64,11 @@ if (isset($_SESSION['id'])) {
 	mysqli_query($link,"UPDATE sauveteur SET dateAvantderVisite=DATE_ADD(now(), INTERVAL +2 HOUR) WHERE id=$idSession") or die("Update Sauveteur News failed");
 
 ?>
+
+<center>
+<div id="header">Dernière Minute</div>
+</center>
+
 <div id="intro">Vous retrouverez ici,&nbsp les informations de dernière minute concernant le centre de formation de Montbéliard.</div>
 
 <div id="container">

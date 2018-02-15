@@ -27,13 +27,14 @@ if (d) {d.style.display='block';}
 </head>
 
 <body>
-<center>
-<div id="header">Votre Avatar</div>
-</center>
+
 
 <?php
 
 if (isset($_SESSION['id'])) {
+
+	echo "<center><div id=\"header\">Votre Avatar</div></center>";
+
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 

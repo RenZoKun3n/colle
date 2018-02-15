@@ -201,7 +201,7 @@ if (isset($_SESSION['id'])) {
 		participation($link,$participe,$idPoste,$idSession,0,$heureDebut,$heureFin);
 	}
 
-	if($suppr==1 && ($rowAdmin[0]==1 || $rowAdmin[0]==2)){
+	if($suppr==1 && (($rowAdmin[0]==1 || $rowAdmin[0]==2) || ($idSauveteur==$idSession))){
 	  $idSauveteur=$_GET['idSauveteur'];
 	  $idPoste=$_GET['idPoste'];
  	  supprimeParticipation($link,$idPoste,$idSauveteur);
@@ -280,7 +280,7 @@ de formation de Montbéliard. </div>
 
   $dateactu = "20" . date("y-m-d");
 
-  $prochains = isset($_POST['prochains']) ? $_POST['prochains'] : NULL;
+  $prochains = isset($_GET['prochains']) ? $_GET['prochains'] : 1;
   //$prochains=$_POST['prochains'];
 
   if(!$prochains || $prochains=="none") {
@@ -374,13 +374,12 @@ de formation de Montbéliard. </div>
 		echo "<td>";
 
 		// Possibilité de suppression d'un participant pour l'administrateur
-		if ($rowAdmin[0]==1 || $rowAdmin[0]==2) {
+		if($idSession==$sauveteur[2]){
 			echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
 		}
-    //Possibilité de supprimer sa participation pour simple utilisateur envoie d'une demande au gestionnaire.
-    if ($rowAdmin[0]==0) {
-    //  echo "<a href=\"./visuPoste.php?suppr=&idPoste=$idactuel&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
-    }
+		else if ($rowAdmin[0]==1 || $rowAdmin[0]==2) {
+			echo "<a href=\"./visuPoste.php?suppr=1&idPoste=$myrow[0]&idSauveteur=$sauveteur[2]\">Suppr </a>\n";
+		}
 
 		if($participe[2]==$idSession){
 			$participeDeja=true;

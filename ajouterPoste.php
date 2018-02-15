@@ -1,9 +1,9 @@
 <?php
 session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
-
+include('menu.php');
 include('fonctions.php');
-include("menu.php");
+include("ongletNomDeconnexion.php");
 
 ?>
 
@@ -13,7 +13,8 @@ include("menu.php");
 <link rel="stylesheet" href="css/master.css">
 
 <?php
-include("ongletNomDeconnexion.php");
+if(isset($_SESSION['id'])){
+
  $libelle=isset($_POST['libelle']) ? $_POST['libelle'] : NULL;
  $modif=isset($_POST['modif']) ? $_POST['modif'] : NULL;
  $datefinfr=isset($_POST['datefinfr']) ? $_POST['datefinfr'] : NULL;
@@ -66,25 +67,34 @@ include("ongletNomDeconnexion.php");
 
  } else {
 
-?>
-<div class="form">
 
+?>
   <FORM ENCTYPE="multipart/form-data" ACTION="ajouterPoste.php" METHOD="POST">
 
   <br/> Nom du poste : <input type="text" name="libelle" size=60 maxlength=60>
-  <br/><br/> Date début : <input type="date" name="datedebfr" size=10 maxlength=10>
-  <br/><br/> Date fin (si différente de date début) : <input type="date" name="datefinfr" size=10 maxlength=10>
-  <br/><br/> Heure début : <input type="time" name="heuredeb" > (exemple: 08:30:00)
-  <br/><br/> Heure fin : <input type="time" name="heurefin" > (exemple: 17:00:00)
-  <br/><br/> Lieu : <input type="text" name="lieu" size=70 maxlength=70>
-  <br/><br/> Sauveteurs requis (au minimum) : <input type="number" name="participantsMini" > (saisissez un nombre uniquement)
-  <br/><br/> Commentaire : <textarea name="commentaire" cols=30 rows=4></textarea> (Autres informations utiles pour le poste)
+  <br/> Date début : <input type="text" name="datedebfr" size=10 maxlength=10>  (exemple : 28/02/2007)
+  <br/> Date fin (si différente de date début) : <input type="text" name="datefinfr" size=10 maxlength=10> (exemple : 28/02/2007)
+  <br/> Heure début : <input type="text" name="heuredeb" size=10 maxlength=10> (exemple: 08:30:00)
+  <br/> Heure fin : <input type="text" name="heurefin" size=10 maxlength=10> (exemple: 17:00:00)
+  <br/> Lieu : <input type="text" name="lieu" size=70 maxlength=70>
+  <br/> Sauveteurs requis (au minimum) : <input type="text" name="participantsMini" size=3 maxlength=3> (saisissez un nombre uniquement)
+  <br/> Commentaire : <textarea name="commentaire" cols=30 rows=4></textarea> (Autres informations utiles pour le poste)
 
   <INPUT TYPE="submit" VALUE=Enregistrer le poste></FORM>
-  </div>
 <?php
 
 }
 ?>
 
 </html>
+
+<?php
+ } else {
+?>
+ <div id="intro">Vous ne pouvez pas visualiser cette page actuellement. Veuillez vous <a href="./index.php">identifier</a>.</div>
+</body>
+</html>
+
+<?php
+}
+?>

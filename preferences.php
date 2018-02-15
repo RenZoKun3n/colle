@@ -27,9 +27,6 @@ if (d) {d.style.display='block';}
 </head>
 
 <body>
-<center>
-<div id="header">Vos préférences</div>
-</center>
 
 <?php
 
@@ -44,6 +41,11 @@ if (isset($_SESSION['id'])) {
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
 ?>
+
+<center>
+<div id="header">Vos préférences</div>
+</center>
+
 <div id="intro">Vous pouvez consulter et modifier les préférences de votre compte</div>
 
 <div id="container">

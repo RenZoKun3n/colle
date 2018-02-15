@@ -29,12 +29,17 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 </head>
 
 <body>
-<center><div id="header">Ecrire un message personnel</div></center>
+
 
 
 <?php
 
+
+
 if (isset($_SESSION['id'])) {
+
+	echo "<center><div id=\"header\">Ecrire un message personnel</div></center>";
+
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 	//echo "test : $idSession";

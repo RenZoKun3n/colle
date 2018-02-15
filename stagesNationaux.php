@@ -27,13 +27,15 @@ if (d) {d.style.display='block';}
 </head>
 
 <body>
-<center>
-<div id="header">Stages Nationaux SNSM</div>
-</center>
 
 <?php
 
 if (isset($_SESSION['id'])) {
+	?>
+	<center>
+	<div id="header">Stages Nationaux SNSM</div>
+	</center>
+	<?php
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 

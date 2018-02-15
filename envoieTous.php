@@ -12,7 +12,9 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
 <title>Ecrire un message à tous les sauveteurs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
  <script language="javascript">
  <!--
  function envoyer(){
@@ -27,12 +29,15 @@ $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 
 </head>
 
 <body>
-<center><div id="header">Ecrire un message à tous les sauveteurs</div></center>
+
 
 
 <?php
 
 if (isset($_SESSION['id'])) {
+
+	echo "<center><div id=\"header\">Ecrire un message à tous les sauveteurs</div></center>";
+
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 

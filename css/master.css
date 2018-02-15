@@ -29,8 +29,12 @@ line-height: 125%;
   border-radius:5px;
 }
 
+a{
+  text-decoration:none;
+}
+
 a:visited{
-color: black;
+color: blue;
 }
 a:hover{
   color: Green;

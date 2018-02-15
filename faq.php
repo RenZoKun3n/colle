@@ -3,6 +3,7 @@ session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
 include('menu.php');
 include('fonctions.php');
+include('ongletNomDeconnexion.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -24,9 +25,6 @@ if (d) {d.style.display='block';}
 </head>
 
 <body>
-<center>
-<div id="header">Foire aux questions</div>
-</center>
 
 <?php
 
@@ -41,6 +39,9 @@ if (isset($_SESSION['id'])) {
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
 ?>
+<center>
+<div id="header">Foire aux questions</div>
+</center>
 <div id="intro"></div>
 
 <div class="containerPhoto">

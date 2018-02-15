@@ -17,19 +17,21 @@ var d = document.getElementById(id);
 if (d) {d.style.display='block';}
 }
 </script>
-<title>Informations concernant le site</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
  <script type="text/javascript" src="fixed.js"></script>
 </head>
 
 <body>
-<center>
-<div id="header">Informations concernant le site</div>
-</center>
+
 
 <?php
 
 if (isset($_SESSION['id'])) {
+
+	echo "<center><div id=\"header\">Informations concernant le site</div></center>";
+	
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 	
