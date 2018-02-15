@@ -39,16 +39,14 @@ include("ongletNomDeconnexion.php");
 <script type="text/javascript">
 <!--
 function envoyer(){
-	if ( (document.ajout.nom.value=="") || (document.ajout.prenom.value=="") ){
+	if ( (document.ajout.nom.value=="-----") || (document.ajout.nom.value=="") ){
 		alert("Veuillez remplir tous les champs,  merci");
-			} else {
-				if(document.ajout.tel.value.length != 10) {
-					alert("Numéro de téléphone incorrecte. Il doit etre tappé sans espace ni .");
-				} else {
-					document.ajout.submit();
-		}
+	} else {
+		document.ajout.submit();
 	}
-}
+}	
+
+
 
 
 function montre(id) {
@@ -73,10 +71,14 @@ Ajout d'un sauveteur
 <?php
 	echo "<br><b>Veuillez renseigner les différents champs puis <br>cliquez sur Enregistrer pour ajouter un nouveau sauveteur</b>";
 	echo "<form name=\"ajout\" ACTION=\"ajoutSauveteur.php\" METHOD=\"POST\">\n";
-  	echo "<br> Nom : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=\"text\" name=\"nom\" size=20 maxlength=20>\n";
-  	echo "<br> Prénom : &nbsp&nbsp&nbsp&nbsp<input type=\"text\" name=\"prenom\" size=20 maxlength=20>\n";
-	echo "<br> Mail : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=\"text\" name=\"mail\" size=30 maxlength=60> (si disponible)\n";
-  	echo "<br> Telephone : <input type=\"text\" name=\"tel\" size=10 maxlength=10>\n";
+  	echo "<select name=\"nom\"><option value\"-----\" selected=\"selected\">-----</option>";
+
+  	$querySauvTmp=mysqli_query($link,"SELECT mail FROM sauveteurtmp") or die("Select querySauveteurTmp failed");
+	while($sauveteurTmp=mysqli_fetch_row($querySauvTmp)){
+		echo "<option value=\"$sauveteurTmp[0]\">$sauveteurTmp[0]</option>";
+	}
+
+  	echo "</select>";
 	echo "<INPUT TYPE=\"button\" VALUE=\"Enregistrer\" onClick=\"envoyer();\"></form>\n";
 ?>
 </div>
@@ -95,16 +97,23 @@ Ajout d'un sauveteur
 <title>Ajout d'un sauveteur</title>
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
 <?php
-                $mail=$_POST['mail'];
-	        $prenom=$_POST['prenom'];
-                $tel=$_POST['tel'];
+        $mail=$_POST['nom'];
+
+        $queryAjout=mysqli_query($link,"SELECT nom, prenom, telephone, password FROM sauveteurtmp WHERE mail=\"$mail\"") or die("Select queryAjout failed");
+		$rowAjout=mysqli_fetch_row($queryAjout);
 
 		$dateactu = "20" . date("y-m-d");
 
-		$nom2 = strtoupper($nom);  // Mise en majuscule du nom
+		$nom2 = strtoupper($rowAjout[0]);  // Mise en majuscule du nom
 		$mail = strtolower($mail); // Mise en minuscule du mail
+		$prenom=$rowAjout[1];
+		$tel=$rowAjout[2];
+		$passwd=$rowAjout[3];
 
-		$result3=mysqli_query($link,"INSERT INTO sauveteur VALUES (NULL,\"$nom2\", \"$prenom\",\"$mail\", \"$tel\", 0, \"\", DATE_ADD(now(), INTERVAL +2 HOUR) , 1, 1,\"http://crakdown.org/SNSM/Dolphin.jpg\",6, DATE_ADD(now(), INTERVAL +1 HOUR),1);") or die("L'ajout du sauveteur a echouée");
+		$result3=mysqli_query($link,"INSERT INTO sauveteur VALUES (NULL,\"$nom2\", \"$prenom\",\"$mail\", \"$tel\", 0, \"$passwd\", DATE_ADD(now(), INTERVAL +2 HOUR) , 1, 1,\"http://crakdown.org/SNSM/Dolphin.jpg\",6, DATE_ADD(now(), INTERVAL +1 HOUR),1);") or die("L'ajout du sauveteur a echouée");
+
+		$result4=mysqli_query($link,"DELETE FROM sauveteurTmp WHERE mail=\"$mail\";") or die("La suppresion dans sauveteurTmp a echouée");
+
 
 
 		echo "<div id=\"container\"> Opération terminée<br><br>\n<a href=\"ajoutSauveteur.php?$nom=\"none\"\">Ajout d'un autre sauveteur</a><br>\n";
