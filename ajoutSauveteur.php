@@ -22,7 +22,8 @@ include("ongletNomDeconnexion.php");
 
 	$link=connectDB();
 
-	$nom=isset($_POST['nom']) ? $_POST['nom'] : NULL;
+	if(isset($_POST['nom'])) $nom=$_POST['nom'];
+	else $nom = "none";
 
 	// On test si l'utilisateur est un administrateur
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
@@ -113,7 +114,7 @@ Ajout d'un sauveteur
 	} else {
 ?>
 	<body>
-		<center><div id="header">Opération non autorisée</div></center>
+		<center><div id="intro">Opération non autorisée</div></center>
 	</body>
 <?php
 }

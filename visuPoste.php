@@ -4,7 +4,6 @@ session_start();
 include('menu.php');
 include('fonctions.php');
 include("ongletNomDeconnexion.php");
-$idactuel=$_SESSION['id'];
 
 $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
 ?>
