@@ -40,15 +40,14 @@ if($myrowtest=mysqli_fetch_row($test)) {
      $to = $mail;
      $subject = "Changement de mot de passe";
 
-     $message= $newmdp;
+     $message= "Votre nouveau mot de passe est : ".$newmdp;
 
      echo $message;
 
      mail($to,$subject,$message);
 
-     $message=md5($message);
-     $update=mysqli_query($link,"UPDATE sauveteur set password =$newmdp where 'sauveteur'.'mail'=$mail");
-
+     $msg=md5($message);
+     $req=mysqli_query($link,"UPDATE sauveteur SET password =\"$msg\" WHERE mail=\"$mail\"");
 }
 }
 
@@ -57,10 +56,15 @@ if($myrowtest=mysqli_fetch_row($test)) {
     <form enctype="multipart/form-data" action="oublie.php" method="post">
       <div class="col-sm-12">
   			E-mail :           
-  			<input type="text" name="mail" size=43 maxlength=50>
+  			<input type="text" name="mail" size=43 maxlength=50 autocomplete="off" autofocus>
   		</div>
       <input type="submit" name="" value="Changer Mot de passe">
 
     </form>
+    <br><br><br>
+    <form  action="index.php" method="post">
+
+    <input type="submit"  value="Retour">
+  </form>
   </body>
 </html>
