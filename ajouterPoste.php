@@ -3,6 +3,7 @@ session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
 include('menu.php');
 include('fonctions.php');
+include("ongletNomDeconnexion.php");
 
 ?>
 
@@ -12,7 +13,8 @@ include('fonctions.php');
 <link rel="stylesheet" href="css/master.css">
 
 <?php
-include("ongletNomDeconnexion.php");
+if(isset($_SESSION['id'])){
+
  $libelle=isset($_POST['libelle']) ? $_POST['libelle'] : NULL;
  $modif=isset($_POST['modif']) ? $_POST['modif'] : NULL;
  $datefinfr=isset($_POST['datefinfr']) ? $_POST['datefinfr'] : NULL;
@@ -85,3 +87,14 @@ include("ongletNomDeconnexion.php");
 ?>
 
 </html>
+
+<?php
+ } else {
+?>
+ <div id="intro">Vous ne pouvez pas visualiser cette page actuellement. Veuillez vous <a href="./index.php">identifier</a>.</div>
+</body>
+</html>
+
+<?php
+}
+?>

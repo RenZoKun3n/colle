@@ -4,6 +4,18 @@ include('menu.php');
 include('fonctions.php');
 include("ongletNomDeconnexion.php");
 
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<title>Liste des sauveteurs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
+
+<?php
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
@@ -18,14 +30,7 @@ if (isset($_SESSION['id'])) {
 	// On test si l'utilisateur est admin ou non
 	if ($rowAdmin[0]==2 || $rowAdmin[0]==1) {
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<head>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
-<title>Liste des sauveteurs</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="feuille1.css" type="text/css" />
-<link rel="stylesheet" href="css/master.css">
 <script type="text/javascript">
 <!--
 function montre(id) {
@@ -104,14 +109,14 @@ Liste des Sauveteurs
 } else {
 ?>
 	<body>
-		<center><div id="header">Opération non autorisée</div></center>
+		<div id="intro">Vous ne pouvez pas visualiser cette page actuellement. Veuillez vous <a href="./index.php">identifier</a>.</div>
 	</body>
 <?php
   }
 } else {
 ?>
 	<body>
-		<center><div id="header">Opération non autorisée</div></center>
+		<div id="intro">Vous ne pouvez pas visualiser cette page actuellement. Veuillez vous <a href="./index.php">identifier</a>.</div>
 	</body>
 <?php
 }

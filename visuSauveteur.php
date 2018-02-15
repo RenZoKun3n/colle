@@ -29,16 +29,15 @@ if (d) {d.style.display='block';}
 </head>
 
 <body>
-<center>
-<div id="header">
-Liste des Sauveteurs
-</div>
-</center>
+
 
 <?php
 
 // On vérifit si l'utilisateur est authentifié
 if (isset($_SESSION['id'])) {
+
+	echo "<center><div id=\"header\">Liste des Sauveteurs</div></center>";
+
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
 

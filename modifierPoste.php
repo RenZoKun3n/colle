@@ -1,3 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+
+<title>Modification du mot de passe d'un sauveteur</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
+<link rel="stylesheet" href="css/master.css">
+
 <?php
 session_start();
 // On inclue les fichiers php du menu et des fonctions communes à toutes les pages
