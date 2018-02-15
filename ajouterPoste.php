@@ -34,8 +34,8 @@ if(isset($_SESSION['id'])){
       $datefinfr = $datedebfr;
    }
    // On met les dates au format anglais
-   $datefin=datefren($datefinfr);
-   $datedeb=datefren($datedebfr);
+   //$datefin=datefren($datefinfr);
+  // $datedeb=datefren($datedebfr);
 
   // On se connecte a la babase
   $link=connectDB();
@@ -58,7 +58,7 @@ if(isset($_SESSION['id'])){
   	} else {
 
 		// On ajoute le poste
-		$result=mysqli_query($link,"INSERT INTO poste VALUES (NULL,\"$libelle\", '$datedeb', '$datefin', '$heuredeb', '$heurefin', \"$lieu\" ,'$participantsMini', \"$commentaire\");") or die("Query failed");
+		$result=mysqli_query($link,"INSERT INTO poste VALUES (NULL,\"$libelle\", '$datedebfr', '$datefinfr', '$heuredeb', '$heurefin', \"$lieu\" ,'$participantsMini', \"$commentaire\");") or die("Query failed");
 
 	        echo "<b>Insertion réalisée avec succès</b><br/><br/>Vous pouvez retourner à la page des <a href=\"./visuPoste.php?prochains=1\">Prochains postes</a> ,<br/>";
 		echo "ou <a href=\"./ajouterPoste.php?libelle=none\">ajouter un autre poste</a>.<br/>";
@@ -69,11 +69,20 @@ if(isset($_SESSION['id'])){
 
 
 ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+</script>
   <FORM ENCTYPE="multipart/form-data" ACTION="ajouterPoste.php" METHOD="POST">
 
   <br/> Nom du poste : <input type="text" name="libelle" size=60 maxlength=60>
-  <br/> Date début : <input type="text" name="datedebfr" size=10 maxlength=10>  (exemple : 28/02/2007)
-  <br/> Date fin (si différente de date début) : <input type="text" name="datefinfr" size=10 maxlength=10> (exemple : 28/02/2007)
+  <br/> Date début : <input type="date" name="datedebfr" size=10 maxlength=10 id="datepicker">  (exemple : 28/02/2007)
+  <br/> Date fin (si différente de date début) : <input type="date" name="datefinfr" size=10 maxlength=10 id="datepicker" class="hasDatepicker"> (exemple : 28/02/2007)
   <br/> Heure début : <input type="text" name="heuredeb" size=10 maxlength=10> (exemple: 08:30:00)
   <br/> Heure fin : <input type="text" name="heurefin" size=10 maxlength=10> (exemple: 17:00:00)
   <br/> Lieu : <input type="text" name="lieu" size=70 maxlength=70>

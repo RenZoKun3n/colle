@@ -46,7 +46,7 @@ if($myrowtest=mysqli_fetch_row($test)) {
 
      mail($to,$subject,$message);
 
-     $msg=md5($message);
+     $msg=md5($newmdp);
      $req=mysqli_query($link,"UPDATE sauveteur SET password =\"$msg\" WHERE mail=\"$mail\"");
 }
 }
