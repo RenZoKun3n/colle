@@ -30,6 +30,12 @@ if (d) {d.style.display='block';}
 
 <?php
 
+if(isset($_POST['mail']))$mail=$_POST['mail'];
+else $mail="none";
+
+if(isset($_POST['copy']))$copy=$_POST['copy'];
+else $copy="none";
+
 if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
@@ -50,6 +56,7 @@ if (isset($_SESSION['id'])) {
 
 <div id="container">
 <?php
+
 if(!isset($mail) || $mail=="none"){
 
 	$querySauveteur=mysqli_query($link,"SELECT nom,prenom,mail,envoieCopy FROM sauveteur WHERE id=$idSession");
@@ -59,9 +66,9 @@ if(!isset($mail) || $mail=="none"){
 	echo "<FORM ACTION=\"preferences.php\" METHOD=\"POST\">";
 	echo "Votre email : <input type=\"text\" name=\"mail\" size=50 maxlength=50 value=$sauveteur[2]>";
 	if($sauveteur[3]==1){
-		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\" checked=\"true\">";
+		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\" value=\"copy\" checked>";
 	} else {
-		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\">";
+		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\" value=\"copy\">";
 	}
 
    echo "<INPUT TYPE=\"submit\" VALUE=\"Enregistrer les modifications\"></FORM>";
@@ -70,7 +77,7 @@ if(!isset($mail) || $mail=="none"){
 
 } else {
 
-	if($copy){
+	if($copy=="copy"){
 		$envoieCopy=1;
 	} else {
 		$envoieCopy=0;
