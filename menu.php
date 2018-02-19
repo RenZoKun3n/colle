@@ -56,7 +56,8 @@ function menu($link,$admin,$idSession) {
 	?>
 
 	<a href="./writeMsg.php">Ecrire un message</a><br>
-	<a href="./preferences.php">Mes préférences</a></br></center>
+	<a href="./preferences.php">Mes préférences</a></br>
+	<a href="./modifierSonMdp.php">Modifier mon mot de passe</a></br></center>
 	</dd>
 
 <?php
