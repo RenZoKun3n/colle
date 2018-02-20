@@ -38,11 +38,14 @@ if (isset($_SESSION['id'])) {
 
 	echo "<div id=\"intro\">Voici les message que vous avez reçus.</div>";
 
-	$suppr=isset($_GET['suppr']);
+	if(isset($_GET['suppr']))$suppr=$_GET['suppr'];
+	else $suppr="none";
 
+	if(isset($_GET['idMessage']))$idMessage=$_GET['idMessage'];
+	else $idMessage="none";
 
 	if($suppr==1){
-		supprimeMessage($idMessage,$idSession);
+		supprimeMessage($link,$idMessage,$idSession);
 		$idMessage="none";
 		echo "Message supprimé avec succès <br>";
 	}
@@ -52,34 +55,36 @@ if (isset($_SESSION['id'])) {
 
 	<?php
 
-	$idMessage=isset($_GET['idMessage']);
-
 	if(!$idMessage || $idMessage=="none"){
 
 		// On récupère les messages
 		$queryMessage=mysqli_query($link,"SELECT * FROM messages WHERE id_desti=$idSession AND suppr='N' order by id_message desc") or die("SELECT * FROM messages WHERE id_desti=$idSession");
 
-		echo "<table border=1 width=100\%>\n";
-		echo "<tr><td><b>Expéditeur</b></td><td><b>Titre</b></td><td><b>Date</b></td><td><b>Lu</b></td><td></td></tr>\n";
-		while($rowMessage=mysqli_fetch_row($queryMessage)) {
-			echo "<tr><td>\n";
+		if(!mysqli_fetch_row($queryMessage)){
+			echo "Vous n'avez aucun nouveau message";
+		}else{
+			$queryMessage=mysqli_query($link,"SELECT * FROM messages WHERE id_desti=$idSession AND suppr='N' order by id_message desc") or die("SELECT * FROM messages WHERE id_desti=$idSession");
+			echo "<table border=1 width=100\%>\n";
+			echo "<tr><td><b>Expéditeur</b></td><td><b>Titre</b></td><td><b>Date</b></td><td><b>Lu</b></td><td></td></tr>\n";
+			while($rowMessage=mysqli_fetch_row($queryMessage)) {
+				echo "<tr><td>\n";
 
-			$queryExp = mysqli_query($link,"SELECT nom,prenom FROM sauveteur WHERE id=$rowMessage[1]") or die("SELECT nom,prenom FROM sauveteur WHERE id=$rowMessage[1]");
-			$rowExp=mysqli_fetch_row($queryExp);
+				$queryExp = mysqli_query($link,"SELECT nom,prenom FROM sauveteur WHERE id=$rowMessage[1]") or die("SELECT nom,prenom FROM sauveteur WHERE id=$rowMessage[1]");
+				$rowExp=mysqli_fetch_row($queryExp);
 
 
 
-			if($rowMessage[6]){
-				echo "$rowExp[0] $rowExp[1]</td><td><a href=\"./voirMsg.php?idMessage=$rowMessage[0]\">$rowMessage[4]</a></td><td>$rowMessage[3]</td><td>Oui";
-			} else {
-				echo "<b>$rowExp[0] $rowExp[1]</b></td><td><a href=\"./voirMsg.php?idMessage=$rowMessage[0]\"><b>$rowMessage[4]</b></a></td><td><b>$rowMessage[3]</b></td><td><b>Non</b>";
+				if($rowMessage[6]){
+					echo "$rowExp[0] $rowExp[1]</td><td><a href=\"./voirMsg.php?idMessage=$rowMessage[0]\">$rowMessage[4]</a></td><td>$rowMessage[3]</td><td>Oui";
+				} else {
+					echo "<b>$rowExp[0] $rowExp[1]</b></td><td><a href=\"./voirMsg.php?idMessage=$rowMessage[0]\"><b>$rowMessage[4]</b></a></td><td><b>$rowMessage[3]</b></td><td><b>Non</b>";
+				}
+
+				echo "</td><td><a href=\"./voirMsg.php?suppr=1&idMessage=$rowMessage[0]\">Suppr</a>";
+				echo "</td></tr>\n";
 			}
-
-			echo "</td><td><a href=\"./voirMsg.php?suppr=1&idMessage=$rowMessage[0]\">Suppr</a>";
-			echo "</td></tr>\n";
+			echo "</table><br/><br/>\n";
 		}
-		echo "</table><br/><br/>\n";
-
 	} else {
 
 		$queryMessage=mysqli_query($link,"SELECT id_exp,titre,date,texte,id_message FROM messages WHERE id_message=$idMessage AND id_desti=$idSession") or die("SELECT id_exp,titre,date,texte FROM messages WHERE id_message=$idMessage AND id_desti=$idSession");

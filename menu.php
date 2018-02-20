@@ -51,14 +51,22 @@ function menu($link,$admin,$idSession) {
 	} else {
 		$nbMessage=0;
 	}
-        echo "<a href=\"./visuSauveteur.php\">Liste des Sauveteurs</a><br>";
-	echo "<a href=\"./voirMsg.php\">Message(s) [New : $nbMessage]</a><br>";
+
+	if($nbMessage==0){
+		$newMsg="[New : $nbMessage]";
+	} else $newMsg="<b>[New : $nbMessage]</b>";
+
+    echo "<a href=\"./visuSauveteur.php\">Liste des Sauveteurs</a><br>";
+	echo "<a href=\"./voirMsg.php\">Message(s) ";
+	echo $newMsg;
+	echo "</a><br>";
 	?>
 
 	<a href="./writeMsg.php">Ecrire un message</a><br>
 	<a href="./preferences.php">Mes préférences</a></br>
 	<a href="./modifierSonMdp.php">Modifier mon mot de passe</a></br></center>
 	</dd>
+	
 
 <?php
 	// On test si l'utilisateur est admin ou non
