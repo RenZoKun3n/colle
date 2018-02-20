@@ -36,7 +36,7 @@ if (d) {d.style.display='block';}
 // On vérifit si l'utilisateur est authentifié
 if (isset($_SESSION['id'])) {
 
-	echo "<center><div id=\"header\">Liste des Sauveteurs</div></center>";
+	echo "<center><div id=\"header\"><p>Liste des Sauveteurs</p></div></center>";
 
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];

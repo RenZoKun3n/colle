@@ -33,7 +33,7 @@ if (d) {d.style.display='block';}
 
 if (isset($_SESSION['id'])) {
 
-	echo "<center><div id=\"header\">Votre Avatar</div></center>";
+	echo "<center><div id=\"header\"><p>Votre Avatar</p></div></center>";
 
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
@@ -55,7 +55,7 @@ if (isset($_SESSION['id'])) {
 
 
  if ($Fichier && $Fichier != "none") {
-  
+
   $Fichier_name=$Fichier['name'];
 
   $adresseMiniature="http://crakdown.org/SNSM/avatars/";

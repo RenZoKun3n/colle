@@ -49,7 +49,7 @@ if (isset($_SESSION['id'])) {
 ?>
 
 <center>
-<div id="header">Vos préférences</div>
+<div id="header"><p>Vos préférences</p></div>
 </center>
 
 <div id="intro">Vous pouvez consulter et modifier les préférences de votre compte</div>

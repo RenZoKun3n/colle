@@ -85,7 +85,7 @@ if(isset($_SESSION['id'])){
 
 ?>
   <center>
-  <div id="header">Ajout d'un poste</div>
+  <div id="header"><p>Ajout d'un poste</p></div>
   </center>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

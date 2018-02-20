@@ -40,7 +40,7 @@ if (isset($_SESSION['id'])) {
 
 ?>
 <center>
-<div id="header">Foire aux questions</div>
+<div id="header"><p>Foire aux questions</p></div>
 </center>
 <div id="intro"></div>
 

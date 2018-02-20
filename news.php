@@ -65,7 +65,7 @@ if (isset($_SESSION['id'])) {
 ?>
 
 <center>
-<div id="header">Dernière Minute</div>
+<div id="header"><p>Dernière Minute</p></div>
 </center>
 
 <div id="intro">Vous retrouverez ici,&nbsp les informations de dernière minute concernant le centre de formation de Montbéliard.</div>

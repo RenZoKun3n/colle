@@ -46,7 +46,7 @@ function envoyer(){
 	if ( (document.modification.nouveauMdp.value=="") || (document.modification.confirmMdp.value=="") || (document.modification.ancienMdp.value=="")){
 		alert("Veuillez remplir tous les champs,  merci");
 	} else {
-		if((document.modification.nouveauMdp.value.length<4)){ 
+		if((document.modification.nouveauMdp.value.length<4)){
 			alert("Le mot de passe est trop court (4 caractère minimum)");
 		} else {
 			if(document.modification.nouveauMdp.value != document.modification.confirmMdp.value) {
@@ -73,7 +73,7 @@ window.onload=montre;
 <body>
 <center>
 <div id="header">
-Modification du mot de passe
+<p>Modification du mot de passe</p>
 </div>
 </center>
 <div id="container">
@@ -102,10 +102,10 @@ Modification du mot de passe
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
 		<center>
 		<div id="header">
-		     Modification du mot de passe
+		     <p>Modification du mot de passe</p>
 		</div>
 		</center>
-<?php 
+<?php
 		$queryAncienMdp=mysqli_query($link,"SELECT id FROM sauveteur WHERE id=$idSession AND password=\"$ancienMdp\"") or die("Select queryAncienMdp failed");
 		$rowVerifMdp=mysqli_fetch_row($queryAncienMdp);
 		if($rowVerifMdp[0]=="" || !isset($rowVerifMdp[0]) || $rowVerifMdp[0]==null){

@@ -30,13 +30,13 @@ if (d) {d.style.display='block';}
 
 if (isset($_SESSION['id'])) {
 
-	echo "<center><div id=\"header\">Informations concernant le site</div></center>";
-	
+	echo "<center><div id=\"header\"><p>Informations concernant le site</p></div></center>";
+
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
-	
+
 	$link=connectDB();
-	
+
 	// On test si l'utilisateur est un administrateur
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
@@ -46,14 +46,14 @@ if (isset($_SESSION['id'])) {
 
 <div class="containerPhoto">
 <div id="informationsSite">
-<p><span class="premierChar">C</span>e site utilise le langage <a href="http://fr.wikipedia.org/wiki/XHTML">XHTML</a> et les feuilles de style en cascade (ou <a href="http://fr.wikipedia.org/wiki/Css">css</a>) pour construire la mise en page. 
+<p><span class="premierChar">C</span>e site utilise le langage <a href="http://fr.wikipedia.org/wiki/XHTML">XHTML</a> et les feuilles de style en cascade (ou <a href="http://fr.wikipedia.org/wiki/Css">css</a>) pour construire la mise en page.
 C'est pourquoi, les utilisateurs d'Internet Explorer pourraient avoir quelques problèmes d'affichage car ce navigateur ne respecte pas les standards et gère plus ou moins bien les feuilles de style.</p>
 
 <p><b><span class="premierChar">V</span>oici une page du site affichée sur <a href="ie.jpg">Internet Explorer</a> et la même page affichée sous <a href="firefox.jpg">FireFox</a>.</b>
 <br><i>Internet Explorer ne gère pas les coins arrondis et les titres du menu ne sont pas tous centrés.</i></p>
 
-<p><span class="premierChar">D</span>e plus, MS Internet Explorer souffre de nombreuses failles de sécurité non corrigées, qui peuvent conduire au piratage de votre ordinateur, à la dégradation de vos logiciels jusqu'à les rendre inutilisables  
-(Windows compris), à l'installation de logiciels espions (ou de pub) et au vol de vos données personnelles (email, mot de passe, code de carte bleu .. Bref, toutes informations 
+<p><span class="premierChar">D</span>e plus, MS Internet Explorer souffre de nombreuses failles de sécurité non corrigées, qui peuvent conduire au piratage de votre ordinateur, à la dégradation de vos logiciels jusqu'à les rendre inutilisables
+(Windows compris), à l'installation de logiciels espions (ou de pub) et au vol de vos données personnelles (email, mot de passe, code de carte bleu .. Bref, toutes informations
 que vous avez fournies sur le Web.</p>
 
 <p><span class="premierChar">J</span>e ne cherche pas à vous faire changer de navigateur internet. Si Internet Explorer (ou un autre) vous convient, c'est très bien.

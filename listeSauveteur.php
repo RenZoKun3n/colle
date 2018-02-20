@@ -45,7 +45,7 @@ if (d) {d.style.display='block';}
 <body>
 <center>
 <div id="header">
-Liste des Sauveteurs
+<p>Liste des Sauveteurs</p>
 </div>
 </center>
 </body>

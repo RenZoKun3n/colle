@@ -33,7 +33,7 @@ if (d) {d.style.display='block';}
 if (isset($_SESSION['id'])) {
 	?>
 	<center>
-	<div id="header">Stages Nationaux SNSM</div>
+	<div id="header"><p>Stages Nationaux SNSM</p></div>
 	</center>
 	<?php
 	//l'utilisateur est authentifié

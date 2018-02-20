@@ -71,7 +71,7 @@ window.onload=montre;
 <body>
 <center>
 <div id="header">
-Modification du mot de passe
+<p>Modification du mot de passe</p>
 </div>
 </center>
 <div id="container">
@@ -108,7 +108,7 @@ Modification du mot de passe
 
 		<center>
 		<div id="header">
-		     Modification du mot de passe
+		    <p> Modification du mot de passe</p>
 		</div>
 		</center>
 		<div id="container">
