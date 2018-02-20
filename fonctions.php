@@ -27,19 +27,19 @@ function datefren($day){
 
 }
 function creation_vignette($image , $largeur_max , $hauteur_max , $source , $destination , $prefixe){
- if (!file_exists($source.$image)) {
+ if (!file_exists($image['tmp_name'])) {
   echo "L'image $image n'existe pas";
   exit;
   }
 
   // On verifie que l'extention du fichier est bien une image jpg, jpeg ou gif
-  $ext=strtolower(strrchr($image, '.'));
+  $ext=strtolower(strrchr($image['name'], '.'));
   if ($ext!=".jpg" AND $ext!=".jpeg" AND $ext!=".gif"){
   echo "<br>Votre image doit être un jpg, jpeg ou gif <br>";
   exit;
   }
 
-  $size = getimagesize($source.$image);
+  $size = getimagesize($image['tmp_name']);
 
   $largeur_src=$size[0];
   $hauteur_src=$size[1];
@@ -52,11 +52,11 @@ function creation_vignette($image , $largeur_max , $hauteur_max , $source , $des
   }
 
   if($size[2]==1){ // format gif
-  $image_src=imagecreatefromgif($source.$image);
+  $image_src=imagecreatefromgif($image['tmp_name']);
   }
 
   if($size[2]==2){ // format jpg ou jpeg
-  $image_src=imagecreatefromjpeg($source.$image);
+  $image_src=imagecreatefromjpeg($image['tmp_name']);
   }
 
 
@@ -75,7 +75,7 @@ function creation_vignette($image , $largeur_max , $hauteur_max , $source , $des
   $image_dest=imagecreatetruecolor(round($largeur_src*$ratio),round($hauteur_src*$ratio));
   imagecopyresized($image_dest, $image_src, 0, 0, 0, 0,round($largeur_src*$ratio), round($hauteur_src*$ratio), $largeur_src, $hauteur_src);
 
-  if(!imagejpeg($image_dest, $destination.$prefixe.$image)){
+  if(!imagejpeg($image_dest, $destination.$prefixe.$image['name'])){
   echo "la création de la vignette a echouée pour l'image $image";
   exit;
   }

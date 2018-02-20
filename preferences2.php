@@ -44,6 +44,9 @@ if (isset($_SESSION['id'])) {
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
+	if(isset($_FILES['Fichier']))$Fichier=$_FILES['Fichier'];
+	else $Fichier="none";
+
 ?>
 <div id="intro">Vous pouvez modifier ici votre avatar</div>
 
@@ -51,19 +54,19 @@ if (isset($_SESSION['id'])) {
 <?php
 
 
- if (@$Fichier && $Fichier != "none") {
-  copy($Fichier, $Fichier_name);
+ if ($Fichier && $Fichier != "none") {
+  
+  $Fichier_name=$Fichier['name'];
 
-  $adresseFichier="http://crakdown.org/SNSM/avatars/$Fichier_name";
   $adresseMiniature="http://crakdown.org/SNSM/avatars/";
 
   $prefixe=$idSession."_";
   $adresseMiniature=$adresseMiniature.$prefixe.$Fichier_name;
 
-  creation_vignette($Fichier_name,150,150,"./","./avatars/","$prefixe");
+  creation_vignette($Fichier,150,150,"./","./avatars/","$prefixe");
 
   // On supprime le fichier
-  unlink($Fichier_name);
+  unlink($Fichier['tmp_name']);
 
   mysqli_query($link,"UPDATE sauveteur SET lienAvatar=\"$adresseMiniature\" WHERE id=$idSession");
 
@@ -93,49 +96,6 @@ if (isset($_SESSION['id'])) {
 
   echo "</div>";
 }
-
-
-
-
-/*
-
-
-
-if(!$mail || $mail=="none"){
-
-	$querySauveteur=mysqli_query($link,"SELECT lienAvatar FROM sauveteur WHERE id=$idSession");
-	$sauveteur=mysqli_fetch_row($querySauveteur);
-
-	echo "<br><br><h2>$sauveteur[0] &nbsp $sauveteur[1]</h2><br><br>";
-	echo "<FORM ACTION=\"preferences.php\" METHOD=\"POST\">";
-	echo "Votre email : <input type=\"text\" name=\"mail\" size=50 maxlength=50 value=$sauveteur[2]>";
-	if($sauveteur[3]==1){
-		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\" checked=\"true\">";
-	} else {
-		echo "<br>Copie de message privé par mail <input type=\"checkbox\" name=\"copy\">";
-	}
-
-   echo "<INPUT TYPE=\"submit\" VALUE=\"Enregistrer les modifications\"></FORM>";
-
-} else {
-
-	if($copy){
-		$envoieCopy=1;
-	} else {
-		$envoieCopy=0;
-	}
-
-	if(mysqli_query($link,"UPDATE sauveteur SET envoieCopy=$envoieCopy,mail=\"$mail\" WHERE id=$idSession")){
-		echo "Vos préférences ont été mis à jour correctement.";
-	} else {
-		echo "Problème lors de la mise à jour de vos préférences.";
-	}
-
-	$mail="none";
-
-}
-
-*/
 
 ?>
 
