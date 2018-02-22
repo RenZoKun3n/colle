@@ -69,7 +69,7 @@ window.onload=montre;
 <div id="container">
 
 <?php
-	echo "<br><b>Veuillez renseigner les différents champs puis <br>cliquez sur Enregistrer pour ajouter un nouveau sauveteur</b>";
+	echo "<br><b>Ici vous pourrez confirmer l'inscription d'un sauveteur qui se sera préalablement inscrit sur le site<br/>Selectionnez l'utilisateur à inscrire et cliquez sur \"Enregistrer\"</b>";
 	echo "<form name=\"ajout\" ACTION=\"ajoutSauveteur.php\" METHOD=\"POST\">\n";
   	echo "<select name=\"nom\"><option value\"-----\" selected=\"selected\">-----</option>";
 

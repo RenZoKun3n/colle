@@ -52,10 +52,14 @@ if (isset($_SESSION['id'])) {
 
 	echo "<div id=\"container\">";
 
-	$desti=isset($_POST['desti']);
-	$dateactu=isset($_POST['dateactu']);
-	$titre=isset($_POST['titre']);
-	$texte=isset($_POST['texte']);
+	if(isset($_POST['desti']))$desti=$_POST['desti'];
+	else $desti="none";
+	if(isset($_POST['dateactu']))$dateactu=$_POST['dateactu'];
+	else $dateactu="none";
+	if(isset($_POST['titre']))$titre=$_POST['titre'];
+	else $titre="none";
+	if(isset($_POST['texte']))$texte=$_POST['texte'];
+	else $texte="none";
 
 
 	if($desti && $desti!="none"){
