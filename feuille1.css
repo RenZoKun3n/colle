@@ -291,3 +291,17 @@ table.participe{
  font-size: large;
  margin-left: 3%;
 }
+
+.listSauvRow:hover{
+  background-color: white;
+}
+
+#supprSauv{
+  color:blue;
+  cursor:pointer;
+}
+
+#supprSauv:hover{
+  color:green;
+  text-decoration: underline;
+}

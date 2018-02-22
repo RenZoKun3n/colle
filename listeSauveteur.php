@@ -14,6 +14,16 @@ include("ongletNomDeconnexion.php");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="feuille1.css" type="text/css" />
 <link rel="stylesheet" href="css/master.css">
+<script>
+	function SupprSauv(idS)
+	{
+	  if(confirm("Vous êtes sur le point de supprimer un sauveteur ! Confirmez-vous l opération ?"))
+	  {
+		document.supprSauv.idSauv.value=idS;
+		document.supprSauv.submit();
+	  }
+	}
+</script>
 
 <?php
 if (isset($_SESSION['id'])) {
@@ -26,6 +36,12 @@ if (isset($_SESSION['id'])) {
 	$queryAdmin=mysqli_query($link,"SELECT admin FROM sauveteur WHERE id=$idSession") or die("Select queryAdmin failed");
 
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
+
+	if($rowAdmin[0]==1 || $rowAdmin[0]==2){
+	  echo "<FORM name=\"supprSauv\" ACTION=\"supprSauveteur.php\" METHOD=\"POST\">\n";
+	  echo "<INPUT TYPE=\"hidden\" name=\"idSauv\">\n";
+	  echo "</FORM>";
+  	}
 
 	// On test si l'utilisateur est admin ou non
 	if ($rowAdmin[0]==2 || $rowAdmin[0]==1) {
@@ -84,14 +100,20 @@ if (d) {d.style.display='block';}
 	echo "<table border=1 id=\"container\">\n";
 	echo "<tr><td><b><a href=\"./listeSauveteur.php?asc=$invasc\">NOM</a></b></td><td><b>Prénom</b></td>";
 	echo "<td><b>Mail</b></td><td><b>Téléphone</b></td><td><b><a href=\"./listeSauveteur.php?order=1&asc=$invasc\">Dernière con.</a></b></td>";
-	echo "<td><b><a href=\"./listeSauveteur.php?order=2&asc=$invasc\">Nbr Con</a></b></td><td><b>Postes Eff</b></td><td>Modif Mdp</td></tr>\n";
+	echo "<td><b><a href=\"./listeSauveteur.php?order=2&asc=$invasc\">Nbr Con</a></b></td><td><b>Postes Eff</b></td><td>Modif Mdp</td><td>Suppr sauveteur</td></tr>\n";
 	while($rowSauveteur=mysqli_fetch_row($querySauveteur)) {
-		echo "<tr><td>\n";
+		echo "<tr class=\"listSauvRow\"><td>\n";
 
 		$queryNbParticipation=mysqli_query($link,"SELECT COUNT( * ) FROM `participe`WHERE id_sauveteur=$rowSauveteur[0]");
 		$rowNbParticipation=mysqli_fetch_row($queryNbParticipation);
 
-		echo "$rowSauveteur[1]</td><td>$rowSauveteur[2]</td><td>$rowSauveteur[3]</td><td>$rowSauveteur[4]</td><td>$rowSauveteur[7]</td><td>$rowSauveteur[8]</td><td>$rowNbParticipation[0]<td><a href=\"./modifieMdp.php?idSauveteur=$rowSauveteur[0]&nomSauveteur=$rowSauveteur[1]&prenomSauveteur=$rowSauveteur[2]\">Modif.</a></td>";
+		echo "$rowSauveteur[1]</td><td>$rowSauveteur[2]</td><td>$rowSauveteur[3]</td><td>$rowSauveteur[4]</td><td>$rowSauveteur[7]</td><td>$rowSauveteur[8]</td><td>$rowNbParticipation[0]<td><a href=\"./modifieMdp.php?idSauveteur=$rowSauveteur[0]&nomSauveteur=$rowSauveteur[1]&prenomSauveteur=$rowSauveteur[2]\">Modif.</a></td><td>";
+
+		if($rowSauveteur[0]!=$idSession){
+			echo "<span id='supprSauv' onClick='SupprSauv($rowSauveteur[0])'>Suppr.</span>";
+		}
+
+		echo "</td>";
 
 		echo "</td></tr>\n";
 	}
