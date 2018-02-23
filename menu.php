@@ -2,8 +2,7 @@
 
 function menu($link,$admin,$idSession) {
 ?>
-	<script type="text/javascript">
-	<!--
+	<!--<script type="text/javascript">
 	function changeEtat(id) {
 		var menu= "menu"+id;
 		if (document.getElementById(id).style.display=='block'){
@@ -24,8 +23,7 @@ function menu($link,$admin,$idSession) {
 		}
 		if (d) {d.style.display='block';}
 	}
-	//-->
-	</script>
+	</script>-->
 
 	<div class="menu">
 	<b class="titremenu">Formation</b>

@@ -300,8 +300,8 @@ de formation de Montbéliard. </div>
 	echo "$myrow[1] &nbsp&nbsp";
 	if($rowAdmin[0]==1 || $rowAdmin[0]==2){
 
-		echo "<img src=\"mod.gif\" onclick='actionModifPoste($myrow[0]);'>";
-		echo "<img src=\"supp.gif\" onclick='actionSupprPoste($myrow[0]);'>";
+		echo "<img class=\"posteAction\" src=\"mod.gif\" onclick='actionModifPoste($myrow[0]);'>";
+		echo "<img class=\"posteAction\" src=\"supp.gif\" onclick='actionSupprPoste($myrow[0]);'>";
 
 	}
 
