@@ -14,8 +14,8 @@ include("ongletNomDeconnexion.php");
 
 <title>Ajout d'un sauveteur</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="feuille1.css" type="text/css" />
 <link rel="stylesheet" href="css/master.css">
+<link rel="stylesheet" href="feuille1.css" type="text/css" />
 <?php if (isset($_SESSION['id'])) {
 	//l'utilisateur est authentifié
 	$idSession=$_SESSION['id'];
@@ -37,7 +37,7 @@ include("ongletNomDeconnexion.php");
 
 ?>
 <script type="text/javascript">
-<!--
+
 function envoyer(){
 	if ( (document.ajout.nom.value=="-----") || (document.ajout.nom.value=="") ){
 		alert("Veuillez remplir tous les champs,  merci");
@@ -48,7 +48,7 @@ function envoyer(){
 
 
 
-
+/*
 function montre(id) {
 var d = document.getElementById(id);
 	for (var i = 1; i<=40; i++) {
@@ -57,8 +57,8 @@ var d = document.getElementById(id);
 if (d) {d.style.display='block';}
 }
 
-window.onload=montre;
--->
+window.onload=montre;*/
+
 </script></head>
 <body>
 <center>

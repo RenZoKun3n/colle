@@ -43,7 +43,7 @@ if (isset($_SESSION['id'])) {
 ?>
 
 <script type="text/javascript">
-<!--
+
 function envoyer(){
 	if ( (document.modification.nouveauMdp.value=="") || (document.modification.nouveauMdp2.value=="") ){
 		alert("Veuillez remplir tous les champs,  merci");
@@ -56,7 +56,7 @@ function envoyer(){
 	}
 }
 
-
+/*
 function montre(id) {
 var d = document.getElementById(id);
 	for (var i = 1; i<=40; i++) {
@@ -65,8 +65,8 @@ var d = document.getElementById(id);
 if (d) {d.style.display='block';}
 }
 
-window.onload=montre;
--->
+window.onload=montre;*/
+
 </script></head>
 <body>
 <center>
