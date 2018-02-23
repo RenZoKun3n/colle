@@ -27,8 +27,8 @@ if (isset($_SESSION['id'])) {
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
 	if($rowAdmin[0]==1 || $rowAdmin[0]==2){
-	  @$idPoste=$_POST[idPoste];
-	 @ $action=$_POST[action];
+	  @$idPoste=$_POST['idPoste'];
+	  @$action=$_POST['action'];
 
 	  if($action==1){
 		// Modification
@@ -41,7 +41,8 @@ if (isset($_SESSION['id'])) {
 			 $datefin=datefren($rowPoste[2]);
 
 
-			echo "<html>";
+			echo "<body>";
+			echo "<center><div id=\"header\"><p>Modifier un poste</p></div></center>";
 			echo "<b>Modifications des informations concernant un poste</b>";
 			echo "<FORM ENCTYPE=\"multipart/form-data\" ACTION=\"ajouterPoste.php\" METHOD=\"POST\">\n";
 			echo "<INPUT TYPE=\"hidden\" name=\"modif\" value=\"1\">\n";
@@ -55,6 +56,10 @@ if (isset($_SESSION['id'])) {
 			echo "<br/> Sauveteurs requis (au minimum) : <input type=\"text\" name=\"participantsMini\" value=\"$rowPoste[6]\" size=3 maxlength=3> (saisissez un nombre uniquement)\n";
 			echo "<br/> Commentaire : <textarea name=\"commentaire\" value=\"$rowPoste[7]\" cols=30 rows=4></textarea> (Autres informations utiles pour le poste)\n";
 			echo "<INPUT TYPE=\"submit\" VALUE=Enregistrer les modifications></FORM></html>\n";
+
+			menu($link,$rowAdmin[0],$idSession);
+			footer();
+
 	  	} else {
 			echo "Erreur: Poste non trouvé";
 	 	}
@@ -68,13 +73,17 @@ if (isset($_SESSION['id'])) {
 	     // Suppression
 	     $queryPoste2=mysqli_query($link,"SELECT libelle,datedeb,lieu FROM poste WHERE id=$idPoste") or die("La requete poste a echouée");
 	     if($rowPoste2=mysqli_fetch_row($queryPoste2)){
-		echo "<html>";
-	     	echo "Attention, vous allez supprimer le poste $rowPoste2[0] qui se déroule à $rowPoste2[2] le $rowPoste2[1]<br/><b>Etes vous sur de vouloir réaliser cette action ?</b><br/>\n";
+		echo "<body>";
+		echo "<center><div id=\"header\"><p>Supprimer un poste</p></div></center>";
+     	echo "Attention, vous allez supprimer le poste $rowPoste2[0] qui se déroule à $rowPoste2[2] le $rowPoste2[1]<br/><b>Etes vous sur de vouloir réaliser cette action ?</b><br/>\n";
 		echo "<FORM ENCTYPE=\"multipart/form-data\" ACTION=\"ajouterPoste.php\" METHOD=\"POST\">\n";
 		echo "<INPUT TYPE=\"hidden\" name=\"modif\" value=\"2\">\n";
 		echo "<INPUT TYPE=\"hidden\" name=\"idPoste\" value=$idPoste>\n";
 		echo "<INPUT TYPE=\"submit\" VALUE=Supprimer le poste></FORM>\n";
 		echo "<b>Cliquer <a href=./visuPoste.php?prochains=1>Ici</a> pour annuler et retourner à la liste des postes.<b><br/></html>\n";
+
+		menu($link,$rowAdmin[0],$idSession);
+		footer();
 
 
 	     } else {

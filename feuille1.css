@@ -305,3 +305,7 @@ table.participe{
   color:green;
   text-decoration: underline;
 }
+
+.posteAction{
+  cursor:pointer;
+}
