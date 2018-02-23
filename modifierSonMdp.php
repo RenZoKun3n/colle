@@ -42,11 +42,19 @@ if (isset($_SESSION['id'])) {
 	if(isset($_POST['confirmMdp'])) $confirmMdp=md5($_POST['confirmMdp']);
 	else $confirmMdp="";
 
+	?>
+	<center>
+	<div id="header">
+	     <p>Modification du mot de passe</p>
+	</div>
+	</center>
+	<?php
+
 		if ($ancienMdp=="" || $nouveauMdp=="" || $confirmMdp=="") {
 ?>
 
 <script type="text/javascript">
-<!--
+
 function envoyer(){
 	if ( (document.modification.nouveauMdp.value=="") || (document.modification.confirmMdp.value=="") || (document.modification.ancienMdp.value=="")){
 		alert("Veuillez remplir tous les champs,  merci");
@@ -63,7 +71,7 @@ function envoyer(){
 	}
 }
 
-
+/*
 function montre(id) {
 var d = document.getElementById(id);
 	for (var i = 1; i<=40; i++) {
@@ -72,15 +80,11 @@ var d = document.getElementById(id);
 if (d) {d.style.display='block';}
 }
 
-window.onload=montre;
--->
+window.onload=montre;*/
+
 </script></head>
 <body>
-<center>
-<div id="header">
-<p>Modification du mot de passe</p>
-</div>
-</center>
+
 <div id="container">
 
 	<br><b>Veuillez remplir le formulaire de changement de mot de passe : </b>
@@ -92,25 +96,11 @@ window.onload=montre;
 
 </div>
 
-</body>
 <?php
+
 	} else {
 		// modif du mdp
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<head>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-
-
-<title>Modification de mot de passe d'un sauveteur</title>
-<link rel="stylesheet" href="feuille1.css" type="text/css" />
-		<center>
-		<div id="header">
-		     <p>Modification du mot de passe</p>
-		</div>
-		</center>
-<?php
 		$queryAncienMdp=mysqli_query($link,"SELECT id FROM sauveteur WHERE id=$idSession AND password=\"$ancienMdp\"") or die("Select queryAncienMdp failed");
 		$rowVerifMdp=mysqli_fetch_row($queryAncienMdp);
 		if($rowVerifMdp[0]=="" || !isset($rowVerifMdp[0]) || $rowVerifMdp[0]==null){
@@ -126,7 +116,6 @@ window.onload=montre;
 	}
 
 menu($link,$rowAdmin[0],$idSession);
-
 footer();
 
 
