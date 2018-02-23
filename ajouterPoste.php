@@ -99,16 +99,16 @@ $( function() {
 </script>
   <FORM ENCTYPE="multipart/form-data" ACTION="ajouterPoste.php" METHOD="POST">
 
-  <br/> Nom du poste : <input type="text" name="libelle" size=60 maxlength=60>
-  <br/> Date début : <input type="date" name="datedebfr" size=10 maxlength=10 id="datepicker">  (exemple : 28/02/2007)
-  <br/> Date fin (si différente de date début) : <input type="date" name="datefinfr" size=10 maxlength=10 id="datepicker" class="hasDatepicker"> (exemple : 28/02/2007)
-  <br/> Heure début : <input type="text" name="heuredeb" size=10 maxlength=10> (exemple: 08:30:00)
-  <br/> Heure fin : <input type="text" name="heurefin" size=10 maxlength=10> (exemple: 17:00:00)
-  <br/> Lieu : <input type="text" name="lieu" size=70 maxlength=70>
-  <br/> Sauveteurs requis (au minimum) : <input type="text" name="participantsMini" size=3 maxlength=3> (saisissez un nombre uniquement)
-  <br/> Commentaire : <textarea name="commentaire" cols=30 rows=4></textarea> (Autres informations utiles pour le poste)
+  <div class="container-fluid fo"> <div class="col-lg-2"> Nom du poste :</div> <div class="col-lg-4"> <input type="text" name="libelle" size=60 maxlength=60></div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Date début :</div> <div class="col-lg-4"> <input type="date" name="datedebfr" size=10 maxlength=10 id="datepicker">  (exemple : 28/02/2007)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Date fin (si différente de date début) :</div> <div class="col-lg-4"> <input type="date" name="datefinfr" size=10 maxlength=10 id="datepicker" class="hasDatepicker"> (exemple : 28/02/2007)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Heure début :</div> <div class="col-lg-4"> <input type="text" name="heuredeb" size=10 maxlength=10> (exemple: 08:30:00)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Heure fin :</div> <div class="col-lg-4"> <input type="text" name="heurefin" size=10 maxlength=10> (exemple: 17:00:00)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Lieu :</div> <div class="col-lg-4"> <input type="text" name="lieu" size=70 maxlength=70></div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Sauveteurs requis (au minimum) :</div> <div class="col-lg-4"> <input type="text" name="participantsMini" size=3 maxlength=3> (saisissez un nombre uniquement)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Commentaire :</div> <div class="col-lg-4"> <textarea name="commentaire" cols=30 rows=4></textarea> </br> (Autres informations utiles pour le poste)</div></div>
 
-  <INPUT TYPE="submit" VALUE=Enregistrer le poste></FORM>
+  <div><INPUT TYPE="submit" VALUE=Enregistrer le poste></FORM></div>
 <?php
 
 }

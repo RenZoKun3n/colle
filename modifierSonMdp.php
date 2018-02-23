@@ -27,6 +27,11 @@ if (isset($_SESSION['id'])) {
 
 	$rowAdmin=mysqli_fetch_row($queryAdmin);
 
+	?>
+
+	<?php
+
+
 
 	if(isset($_POST['ancienMdp'])) $ancienMdp=md5($_POST['ancienMdp']);
 	else $ancienMdp="";
@@ -77,14 +82,14 @@ window.onload=montre;
 </div>
 </center>
 <div id="container">
-<?php
-	echo "<br><b>Veuillez remplir le formulaire de changement de mot de passe : </b>";
-	echo "<form name=\"modification\" ACTION=\"modifierSonMdp.php\" METHOD=\"POST\">\n";
-	echo "<br> Ancien mot de passe : <input type=\"password\" name=\"ancienMdp\" size=20 maxlength=20>\n";
-  	echo "<br> Nouveau mot de passe : <input type=\"password\" name=\"nouveauMdp\" size=20 maxlength=20>\n";
-  	echo "<br> Confirmer mot de passe : <input type=\"password\" name=\"confirmMdp\" size=20 maxlength=20>\n";
-	echo "<INPUT TYPE=\"button\" VALUE=\"Enregistrer\" onClick=\"envoyer();\"></form>\n";
-?>
+
+	<br><b>Veuillez remplir le formulaire de changement de mot de passe : </b>
+	<form name="modification" ACTION="modifierSonMdp.php" METHOD="POST">
+	<div class="container-fluid fo"> <div class="col-lg-5"> Ancien mot de passe : </div> <div class="col-lg-6"> <input type="password" name="ancienMdp" size=20 maxlength=20></div></div>
+	<div class="container-fluid fo"> <div class="col-lg-5"> Nouveau mot de passe : </div> <div class="col-lg-6"> <input type="password" name="nouveauMdp" size=20 maxlength=20></div></div>
+  <div class="container-fluid fo"> <div class="col-lg-5"> Confirmer mot de passe : </div> <div class="col-lg-6"> <input type="password" name="confirmMdp" size=20 maxlength=20></div></div>
+	<INPUT TYPE="button" VALUE="Enregistrer" onClick="envoyer();"></form>
+
 </div>
 
 </body>
