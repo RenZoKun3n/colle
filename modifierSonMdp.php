@@ -96,7 +96,7 @@ window.onload=montre;*/
 
 </div>
 
-<?php
+	<?php
 
 	} else {
 		// modif du mdp

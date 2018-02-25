@@ -47,15 +47,15 @@ if (isset($_SESSION['id'])) {
 			echo "<FORM ENCTYPE=\"multipart/form-data\" ACTION=\"ajouterPoste.php\" METHOD=\"POST\">\n";
 			echo "<INPUT TYPE=\"hidden\" name=\"modif\" value=\"1\">\n";
 			echo "<INPUT TYPE=\"hidden\" name=\"idPoste\" value=$idPoste>\n";
-			echo "<br/> Nom du poste : <input type=\"text\" name=\"libelle\" value=\"$rowPoste[0]\" size=60 maxlength=60>\n";
-			echo "<br/> Date début : <input type=\"text\" name=\"datedebfr\" value=\"$datedeb\" size=10 maxlength=10>  (exemple : 28/02/2007)\n";
-			echo "<br/> Date fin (si différente de date début) : <input type=\"text\" name=\"datefinfr\" value=\"$datefin\" size=10 maxlength=10> (exemple : 28/02/2007)\n";
-			echo "<br/> Heure début : <input type=\"text\" name=\"heuredeb\" value=\"$rowPoste[3]\" size=10 maxlength=10> (exemple: 08:30:00)\n";
-			echo "<br/> Heure fin : <input type=\"text\" name=\"heurefin\" value=\"$rowPoste[4]\" size=10 maxlength=10> (exemple: 17:00:00)\n";
-			echo "<br/> Lieu : <input type=\"text\" name=\"lieu\" value=\"$rowPoste[5]\" size=70 maxlength=70>\n";
-			echo "<br/> Sauveteurs requis (au minimum) : <input type=\"text\" name=\"participantsMini\" value=\"$rowPoste[6]\" size=3 maxlength=3> (saisissez un nombre uniquement)\n";
-			echo "<br/> Commentaire : <textarea name=\"commentaire\" value=\"$rowPoste[7]\" cols=30 rows=4></textarea> (Autres informations utiles pour le poste)\n";
-			echo "<INPUT TYPE=\"submit\" VALUE=Enregistrer les modifications></FORM></html>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Nom du poste :</div> <div class=\"col-lg-4\">  <input type=\"text\" name=\"libelle\" value=\"$rowPoste[0]\" size=60 maxlength=60></div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Date début :</div> <div class=\"col-lg-4\"> <input type=\"date\" name=\"datedebfr\" value=\"$datedeb\" size=10 maxlength=10>  (exemple : 28/02/2007)</div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Date fin (si différente de date début) :</div> <div class=\"col-lg-4\"> <input type=\"date\" name=\"datefinfr\" value=\"$datefin\" size=10 maxlength=10> (exemple : 28/02/2007)</div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Heure début :</div> <div class=\"col-lg-4\"> <input type=\"text\" name=\"heuredeb\" value=\"$rowPoste[3]\" size=10 maxlength=10> (exemple: 08:30:00)</div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Heure fin :</div> <div class=\"col-lg-4\"> <input type=\"text\" name=\"heurefin\" value=\"$rowPoste[4]\" size=10 maxlength=10> (exemple: 17:00:00)</div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Lieu :</div> <div class=\"col-lg-4\"> <input type=\"text\" name=\"lieu\" value=\"$rowPoste[5]\" size=70 maxlength=70></div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Sauveteurs requis (au minimum) :</div> <div class=\"col-lg-4\"> <input type=\"text\" name=\"participantsMini\" value=\"$rowPoste[6]\" size=3 maxlength=3> (saisissez un nombre uniquement)</div></div>\n";
+			echo "<div class=\"container-fluid fo\"> <div class=\"col-lg-2\"> Commentaire :</div> <div class=\"col-lg-4\"> <textarea name=\"commentaire\" value=\"$rowPoste[7]\" cols=30 rows=4></textarea> </br> (Autres informations utiles pour le poste)</div></div>\n";
+			echo " <INPUT TYPE=\"submit\" VALUE=Enregistrer les modifications></FORM></html>\n";
 
 			menu($link,$rowAdmin[0],$idSession);
 			footer();
