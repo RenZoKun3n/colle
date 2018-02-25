@@ -65,9 +65,11 @@ if (isset($_SESSION['id'])) {
 		//echo "<INPUT TYPE=\"hidden\" name=\"idPoste\" value=\"$myrow[0]\">\n";
 		$querySauveteur2=mysqli_query($link,"SELECT nom,prenom FROM sauveteur WHERE id=$desti") or die("Select sur le sauveteurs failed");
 		$sauveteur2=mysqli_fetch_row($querySauveteur2);
-		echo "<br>Envoyé à $sauveteur2[0] $sauveteur2[1]";
-		echo "<br> Titre du message : <input type=\"text\" name=\"titre\" size=35 maxlength=50>";
-		echo  "<br> Texte : <textarea name=\"texte\" cols=30 rows=4></textarea>";
+		echo "<br>Envoyé à $sauveteur2[0] $sauveteur2[1]<br>";
+		?>
+		<div class="container-fluid"><div class="col-ms-4"> Titre du message :</div> <div class="col-ms-8"><input type=\"text\" name=\"titre\" size=35 maxlength=50></div></div>
+		<div class="container-fluid"><div class="col-ls-3"> Texte : </div><div class="col-ls-9"><textarea name=\"texte\" cols=30 rows=4></textarea></div></div>
+		<?php
 		echo "<INPUT TYPE=\"button\" VALUE=\"Envoyer Message\" onClick=\"envoyer();\"></FORM>\n";
 	}
 

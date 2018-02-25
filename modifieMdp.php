@@ -78,7 +78,7 @@ window.onload=montre;*/
 <?php
 	echo "<br><b>Veuillez renseigner le nouveau mot de passe de $nomSauveteur $prenomSauveteur</b>";
 	echo "<form name=\"modification\" ACTION=\"modifieMdp.php\" METHOD=\"POST\">\n";
-  	echo "<br> Mot de passe : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=\"text\" name=\"nouveauMdp\" size=20 maxlength=20>\n";
+  	echo "<br> Mot de passe : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=\"text\" name=\"nouveauMdp\" size=20 maxlength=20>\n";
   	echo "<br> Mot de passe (une seconde fois) : &nbsp&nbsp<input type=\"text\" name=\"nouveauMdp2\" size=20 maxlength=20>\n";
 	echo "<INPUT TYPE=\"hidden\" name=\"idSauveteur\" value=\"$idSauveteur\">\n";
 	echo "<INPUT TYPE=\"button\" VALUE=\"Enregistrer\" onClick=\"envoyer();\"></form>\n";
