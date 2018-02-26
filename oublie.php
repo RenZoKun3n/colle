@@ -42,7 +42,7 @@ if($myrowtest=mysqli_fetch_row($test)) {
 
      $message= "Votre nouveau mot de passe est : ".$newmdp;
 
-     echo $message;
+    // echo $message;
 
      mail($to,$subject,$message);
 

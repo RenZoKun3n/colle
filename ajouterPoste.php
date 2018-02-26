@@ -90,18 +90,11 @@ if(isset($_SESSION['id'])){
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-$( function() {
-  $( "#datepicker" ).datepicker();
-} );
-</script>
   <FORM ENCTYPE="multipart/form-data" ACTION="ajouterPoste.php" METHOD="POST">
 
   <div class="container-fluid fo"> <div class="col-lg-2"> Nom du poste :</div> <div class="col-lg-4"> <input type="text" name="libelle" size=60 maxlength=60></div></div>
-  <div class="container-fluid fo"> <div class="col-lg-2"> Date début :</div> <div class="col-lg-4"> <input type="date" name="datedebfr" size=10 maxlength=10 id="datepicker">  (exemple : 28/02/2007)</div></div>
-  <div class="container-fluid fo"> <div class="col-lg-2"> Date fin (si différente de date début) :</div> <div class="col-lg-4"> <input type="date" name="datefinfr" size=10 maxlength=10 id="datepicker" class="hasDatepicker"> (exemple : 28/02/2007)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Date début :</div> <div class="col-lg-4"> <input type="date" name="datedebfr" size=10 maxlength=10 >  (exemple : 28/02/2007)</div></div>
+  <div class="container-fluid fo"> <div class="col-lg-2"> Date fin (si différente de date début) :</div> <div class="col-lg-4"> <input type="date" name="datefinfr" size=10 maxlength=10 > (exemple : 28/02/2007)</div></div>
   <div class="container-fluid fo"> <div class="col-lg-2"> Heure début :</div> <div class="col-lg-4"> <input type="text" name="heuredeb" size=10 maxlength=10> (exemple: 08:30:00)</div></div>
   <div class="container-fluid fo"> <div class="col-lg-2"> Heure fin :</div> <div class="col-lg-4"> <input type="text" name="heurefin" size=10 maxlength=10> (exemple: 17:00:00)</div></div>
   <div class="container-fluid fo"> <div class="col-lg-2"> Lieu :</div> <div class="col-lg-4"> <input type="text" name="lieu" size=70 maxlength=70></div></div>
