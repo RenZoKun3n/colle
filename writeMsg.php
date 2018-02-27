@@ -99,10 +99,10 @@ if (isset($_SESSION['id'])) {
     ?>
 		<FORM name="message" ACTION="writeMsg.php" METHOD="POST">
 		<br>
-    <div class="container-fluid"><div class="col-ms-4"> Titre du message :</div> <div class="col-ms-8"><input type=\"text\" name=\"titre\" size=35 maxlength=50></div></div>
+    <div class="container-fluid"><div class="col-ms-4"> Titre du message :</div> <div class="col-ms-8"><input type="text" name="titre" size=35 maxlength=50></div></div>
 	<!--	//echo "<INPUT TYPE=\"hidden\" name=\"exp\" value=\"$idSession\">\n";
 		//echo "<INPUT TYPE=\"hidden\" name=\"idPoste\" value=\"$myrow[0]\">\n";-->
-		<div class="container-fluid"><div class="col-ls-3"> Texte : </div><div class="col-ls-9"><textarea name=\"texte\" cols=30 rows=4></textarea></div></div>
+		<div class="container-fluid"><div class="col-ls-3"> Texte : </div><div class="col-ls-9"><textarea name="texte" cols=30 rows=4></textarea></div></div>
     <?php
 		echo "<select name=\"desti\">";
 		$querySauveteur2=mysqli_query($link,"SELECT id,nom,prenom FROM sauveteur ORDER BY `nom` ASC") or die("Select sur tous les sauveteurs failed");
