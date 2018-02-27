@@ -47,10 +47,6 @@ if (isset($_SESSION['id'])) {
 <div class="containerPhoto">
 <div id="informationsSite">
 
-<p><b><span class="premierChar">Q</span>ue faire si je perds mon mot de passe?</b><br>
-Je ne pourrai pas retrouver votre ancien mot de passe, puisque celui-ci est chiffré, par contre, vous pouvez me contacter afin que j'associe un nouveau mot de passe à votre e-mail.
-</p>
-
 <p><b><span class="premierChar">M</span>es données personnelles sont-elles visibles depuis d'autres sites Internet?</b><br>
 Non. L'accès au site étant restreint par la demande d'une adresse e-mail faisant partie de la liste de diffusion et d'un mot de passe, les données personnelles sont protégées.
 </p>
@@ -59,11 +55,6 @@ Non. L'accès au site étant restreint par la demande d'une adresse e-mail faisa
 Oui et Non. Des fichiers HTML vides sont présents dans les dossiers contenant nos photos. Ainsi les photos ne sont pas disponibles pour des personnes externes au site (qui ne
 connaissent pas l'adresse exacte des photos).
 </p>
-
-<p><b><span class="premierChar">P</span>ourquoi je ne peux pas annuler ma participation à un poste de secours?</b><br>
-Tout simplement afin d'éviter un manque de sauveteurs la veille, voir quelques heures avant le début d'un poste de secours. Vous pouvez toujours contacter Christian ou m'envoyer
-un mail si vous avez un empêchement impromptu.
-</p><br>
 
 <br>
 </div> <!-- <div id="informationsSite">   -->
